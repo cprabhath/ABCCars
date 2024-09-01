@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace ABCCars.Utils
 {
@@ -11,5 +13,10 @@ namespace ABCCars.Utils
         public string Email { get; set; }
         public string Phone { get; set; }
         public int Status { get; set; }
+
+        public static implicit operator CustomersList(List<CustomersList> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

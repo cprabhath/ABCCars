@@ -30,6 +30,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Black and Red Modern Automotive Car Logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net48\BCrypt.Net-Next.dll</HintPath>
@@ -160,6 +163,11 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABCCarTradesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ABCCarTradesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AdminForms\AddNewItem\AddNewCar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +197,12 @@
     </Compile>
     <Compile Include="AdminForms\AddNewItem\CustomerEdit.Designer.cs">
       <DependentUpon>CustomerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\AddNewItem\ViewOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\AddNewItem\ViewOrders.Designer.cs">
+      <DependentUpon>ViewOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminForms\AdminLayout.cs">
       <SubType>Form</SubType>
@@ -310,15 +324,40 @@
     <Compile Include="CustomerForms\Orders.Designer.cs">
       <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\ReportView.cs">
+    <Compile Include="CustomerForms\View\Cart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\ReportView.Designer.cs">
-      <DependentUpon>ReportView.cs</DependentUpon>
+    <Compile Include="CustomerForms\View\Cart.Designer.cs">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerForms\View\ViewCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForms\View\ViewCar.Designer.cs">
+      <DependentUpon>ViewCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerForms\View\ViewCarPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForms\View\ViewCarPart.Designer.cs">
+      <DependentUpon>ViewCarPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\OrderReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SalesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utils\CarList.cs" />
     <Compile Include="Utils\CarPartsList.cs" />
-    <Compile Include="Utils\Cars.cs" />
+    <Compile Include="Utils\CarPartsModule.cs" />
+    <Compile Include="Utils\CarsModule.cs" />
     <Compile Include="Utils\ConnectionString.cs" />
     <Compile Include="Utils\CustomersList.cs" />
     <Compile Include="Utils\DBConnection.cs" />
@@ -338,14 +377,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\MailSender.cs" />
     <Compile Include="Utils\OrderList.cs" />
+    <Compile Include="Utils\OrderModule.cs" />
     <Compile Include="Utils\QueryExecutor.cs" />
     <Compile Include="Validations\CustomerRegistrationValidations.cs" />
     <Compile Include="Validations\LoginValidation.cs" />
     <Compile Include="Utils\utils.cs" />
     <Compile Include="Validations\NewPasswordValidations.cs" />
+    <Compile Include="Validations\OrderValidation.cs" />
+    <Compile Include="Validations\VehiclePartValidation.cs" />
     <Compile Include="Validations\ResetPasswordValidations.cs" />
+    <Compile Include="Validations\VehicleValidation.cs" />
     <EmbeddedResource Include="AdminForms\AddNewItem\AddNewCar.resx">
       <DependentUpon>AddNewCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\AddNewItem\AddNewParts.resx">
+      <DependentUpon>AddNewParts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\AddNewItem\CarEdit.resx">
       <DependentUpon>CarEdit.cs</DependentUpon>
@@ -420,6 +466,15 @@
     <EmbeddedResource Include="CustomerForms\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForms\View\Cart.resx">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForms\View\ViewCar.resx">
+      <DependentUpon>ViewCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForms\View\ViewCarPart.resx">
+      <DependentUpon>ViewCarPart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OnBoard.resx">
       <DependentUpon>OnBoard.cs</DependentUpon>
     </EmbeddedResource>
@@ -433,9 +488,25 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reports\ReportView.resx">
-      <DependentUpon>ReportView.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\OrderReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrderReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SalesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ABCCarTradesDataSet.xsc">
+      <DependentUpon>ABCCarTradesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ABCCarTradesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ABCCarTradesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ABCCarTradesDataSet.xss">
+      <DependentUpon>ABCCarTradesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -532,6 +603,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bx-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Black and Red Modern Automotive Car Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientLayout));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtUsername = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnCarPartManage = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
@@ -63,6 +66,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.txtUsername);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnProfile);
             this.panel1.Controls.Add(this.btnCarPartManage);
             this.panel1.Controls.Add(this.btnLogOut);
@@ -75,6 +80,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(335, 783);
             this.panel1.TabIndex = 0;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.AutoSize = true;
+            this.txtUsername.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.White;
+            this.txtUsername.Location = new System.Drawing.Point(35, 115);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(92, 24);
+            this.txtUsername.TabIndex = 10;
+            this.txtUsername.Text = "Welcome";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(88, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Welcome Back";
             // 
             // btnProfile
             // 
@@ -162,17 +189,17 @@
             // 
             this.guna2Separator1.FillColor = System.Drawing.Color.White;
             this.guna2Separator1.FillThickness = 2;
-            this.guna2Separator1.Location = new System.Drawing.Point(-1, 101);
+            this.guna2Separator1.Location = new System.Drawing.Point(-1, 142);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(333, 12);
+            this.guna2Separator1.Size = new System.Drawing.Size(336, 11);
             this.guna2Separator1.TabIndex = 2;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ABCCars.Properties.Resources.Black_and_Red_Modern_Automotive_Car_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(43, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(49, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(239, 83);
+            this.pictureBox1.Size = new System.Drawing.Size(213, 68);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -194,12 +221,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1601, 783);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientLayout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CustomerLayout";
+            this.Text = "Customer";
             this.Load += new System.EventHandler(this.ClientLayout_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -216,5 +245,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel Load_Panel;
         private Guna.UI2.WinForms.Guna2Button btnProfile;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txtUsername;
     }
 }

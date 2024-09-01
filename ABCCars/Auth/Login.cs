@@ -1,4 +1,5 @@
 ﻿using ABCCars.Auth;
+using ABCCars.CustomerForms;
 using ABCCars.Validations;
 using System;
 using System.Windows.Forms;
@@ -69,7 +70,7 @@ namespace ABCCars
             else if (db.UserLogin(username, password))
             {
                 this.Hide();
-                AdminLayout customerDashboard = new AdminLayout();
+                ClientLayout customerDashboard = new ClientLayout(username);
                 customerDashboard.Show();
             }
             // =============================================================================

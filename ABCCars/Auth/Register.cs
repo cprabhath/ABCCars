@@ -21,7 +21,7 @@ namespace ABCCars.Auth
             txtVerfiyHeading.Visible = false;
             txtVerifySub.Visible = false;
         }
-
+        // =================== Customer Registration ===================
         private void btnRegister_Click(object sender, EventArgs e)
         {
             var fullName = txtFullName.Text;
@@ -45,6 +45,7 @@ namespace ABCCars.Auth
 
             CustomerRegister(fullName, email, mobile, address, password, emailVerified);
         }
+        // ===============================================================
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -68,6 +69,7 @@ namespace ABCCars.Auth
             login.Show();
         }
 
+        // =================== Customer Registration ===================
         private void CustomerRegister(string fullName, string email, string mobile, string address, string password, int emailVerified)
         {
             try
@@ -111,7 +113,9 @@ namespace ABCCars.Auth
                 MessageBox.Show("Error: " + e.Message, utils.ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        // ===============================================================
 
+        // =================== Email Verification ========================
         private void btnVerify_Click(object sender, EventArgs e)
         {
             if (txtOTP.Text != otp)
@@ -133,7 +137,7 @@ namespace ABCCars.Auth
                 MessageBox.Show("Email Verified. Please Login to continue ", utils.SuccessTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
+        // ===============================================================
 
         private bool EmailVerification(string email)
         {

@@ -1,4 +1,5 @@
-﻿using ABCCars.Utils;
+﻿using ABCCars.CustomerForms.View;
+using ABCCars.Utils;
 using ABCCars.Validations;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace ABCCars.CustomerForms
     public partial class Cars : Form
     {
         utils utils = new utils();
+        CarsModule carsModule = new CarsModule();
         public Cars()
         {
             InitializeComponent();
@@ -23,7 +25,8 @@ namespace ABCCars.CustomerForms
 
         private void serachBox_TextChanged(object sender, EventArgs e)
         {
-
+            string searchQuery = serachBox.Text.Trim().ToLower();
+            LoadCars(searchQuery); // Pass the selected sort option
         }
 
         private void LoadCars(string searchQuery = "")
@@ -31,9 +34,8 @@ namespace ABCCars.CustomerForms
             // Clear existing controls in the FlowLayoutPanel
             flowLayoutPanel1.Controls.Clear();
 
-            // add dummy data
+            // get data from the database
             List<CarList> cars = new List<CarList>();
-
             cars.Add(new CarList
             {
                 carID = "1",
@@ -99,7 +101,6 @@ namespace ABCCars.CustomerForms
                 UpdatedAt = "2021-10-10"
             });
 
-
             // Perform search filtering
             var filteredCars = cars
                 .Where(c =>
@@ -131,7 +132,7 @@ namespace ABCCars.CustomerForms
 
                 carCard.BuyButtonClick += (s, e) =>
                 {
-                    
+                   
                 };
 
                 // Add the card to the FlowLayoutPanel

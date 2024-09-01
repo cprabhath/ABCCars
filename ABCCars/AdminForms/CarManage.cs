@@ -9,7 +9,7 @@ namespace ABCCars.AdminForms
 {
     public partial class CarManage: Form
     {
-        Cars Cars = new Cars();
+        CarsModule Cars = new CarsModule();
         utils utils = new utils();
 
         public CarManage()
@@ -29,9 +29,73 @@ namespace ABCCars.AdminForms
             flowLayoutPanel1.Controls.Clear();
 
             // add dummy data
-            List<CarList> cars = Cars.GetCars();
+            List<CarList> cars = new List<CarList>();
+            cars.Add(new CarList
+            {
+                carID = "1",
+                Name = "Nissan",
+                Model = "BlueBird",
+                Description = "Toyota E - Vehicle 2023",
+                Condition = "New",
+                Price = "$80000",
+                Image = Properties.Resources.car__1_,
+                CreatedAt = "2024-10-10",
+                UpdatedAt = "2024-10-10"
+            });
 
-      
+            cars.Add(new CarList
+            {
+                carID = "2",
+                Name = "Toyota",
+                Model = "Prius",
+                Description = "Toyota Prius 2021",
+                Condition = "New",
+                Price = "$78000",
+                Image = Properties.Resources.car__2_,
+                CreatedAt = "2021-10-10",
+                UpdatedAt = "2021-10-10"
+            });
+
+            cars.Add(new CarList
+            {
+                carID = "3",
+                Name = "Suzuki",
+                Model = "Swift",
+                Description = "Toyota Swift 2021",
+                Condition = "New",
+                Price = "$24000",
+                Image = Properties.Resources.car__3_,
+                CreatedAt = "2021-10-10",
+                UpdatedAt = "2021-10-10"
+            });
+
+            cars.Add(new CarList
+            {
+                carID = "4",
+                Name = "Honda",
+                Model = "Civic",
+                Description = "Honda Civic 2021",
+                Condition = "New",
+                Price = "$44000",
+                Image = Properties.Resources.car__4_,
+                CreatedAt = "2021-10-10",
+                UpdatedAt = "2021-10-10"
+            });
+
+            cars.Add(new CarList
+            {
+                carID = "5",
+                Name = "Toyoto",
+                Model = "CHR",
+                Description = "Honda CHR 2021",
+                Condition = "New",
+                Price = "$54000",
+                Image = Properties.Resources.car__8_,
+                CreatedAt = "2021-10-10",
+                UpdatedAt = "2021-10-10"
+            });
+
+
             // Combine checks for no cars found or no search results
             if (cars == null || cars.Count == 0)
             {
@@ -66,7 +130,7 @@ namespace ABCCars.AdminForms
             {
                 CarCard carCard = new CarCard
                 {
-                    Title = car.Model + " " + car.Name,
+                    Title = car.Name + " " + car.Model,
                     CarImage = car.Image,
                     Margin = new Padding(20, 0, 0, 15),
                     ViewButtonText = "View",

@@ -18,6 +18,7 @@ namespace ABCCars.AdminForms
         private string _title;
         private string _description;
         private string _price;
+        private string _customerName;
 
         [Category("Custom Props")]
         public string Title
@@ -64,6 +65,17 @@ namespace ABCCars.AdminForms
         {
             get { return btnBuy.Text; }
             set { btnBuy.Text = value; }
+        }
+
+        [Category("Custom Props")]
+        public string OrderStatus
+        {
+            get { return _customerName; }
+            set
+            {
+                _customerName = value;
+                orderStatus.Text = value;
+            }
         }
 
         #endregion

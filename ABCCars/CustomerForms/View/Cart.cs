@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ABCCars.Reports
+namespace ABCCars.CustomerForms.View
 {
-    public partial class ReportView : Form
+    public partial class Cart : Form
     {
-        public ReportView()
+        public Cart()
         {
             InitializeComponent();
         }

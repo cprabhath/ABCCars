@@ -7,7 +7,7 @@ namespace ABCCars.AdminForms.AddNewItem
 {
     public partial class AddNewCar : Form
     {
-        Cars cars = new Cars();
+        CarsModule cars = new CarsModule();
 
         public AddNewCar()
         {

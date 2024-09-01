@@ -34,9 +34,14 @@
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.serachBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.cart = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.cart.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -46,7 +51,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 99);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1085, 684);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1213, 684);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -62,12 +67,14 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.77139F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.22861F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1085, 783);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1213, 783);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.cart);
             this.panel1.Controls.Add(this.guna2ComboBox1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.serachBox);
@@ -75,7 +82,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1085, 99);
+            this.panel1.Size = new System.Drawing.Size(1213, 99);
             this.panel1.TabIndex = 0;
             // 
             // guna2ComboBox1
@@ -125,12 +132,43 @@
             this.serachBox.TabIndex = 0;
             this.serachBox.TextChanged += new System.EventHandler(this.serachBox_TextChanged);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Image = global::ABCCars.Properties.Resources.bx_cart;
+            this.pictureBox2.Location = new System.Drawing.Point(1103, 35);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // cart
+            // 
+            this.cart.BackColor = System.Drawing.Color.White;
+            this.cart.Controls.Add(this.label1);
+            this.cart.Location = new System.Drawing.Point(1097, 29);
+            this.cart.Name = "cart";
+            this.cart.Size = new System.Drawing.Size(93, 43);
+            this.cart.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(48, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "3";
+            // 
             // Cars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1085, 783);
+            this.ClientSize = new System.Drawing.Size(1213, 783);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cars";
@@ -140,6 +178,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.cart.ResumeLayout(false);
+            this.cart.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -152,5 +193,8 @@
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox serachBox;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel cart;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -118,56 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="map-pin-regular-84" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\Images\map-pin-regular-84.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bxs-report" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bxs-report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bx-check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bx-check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="car (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\car (3).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="car (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\car (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="part (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\part (3).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bx-store" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\Images\bx-store.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bx-car" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\Images\bx-car.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="map-pin-regular-84" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\Images\map-pin-regular-84.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bx-cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\Images\bx-cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bx-user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\Images\bx-user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="driving" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\Images\driving.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="car (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\car (6).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="part (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\part (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bx-map" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\Images\bx-map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="part (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\part (3).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="car (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\car (4).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bx-pie-chart-alt-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bx-pie-chart-alt-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bx-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bx-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="part (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\part (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="car (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\car (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="car (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car (7).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bx-cog" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bx-cog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,28 +151,55 @@
   <data name="car (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\car (5).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bx-log-out" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bx-log-out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="car (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car (6).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bx-user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\Images\bx-user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="car (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bx-pie-chart-alt-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bx-pie-chart-alt-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bx-map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\Images\bx-map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="car (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="part (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\part (4).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="car (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\car (7).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bx-car" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\Images\bx-car.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bx-log-out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bx-log-out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Black and Red Modern Automotive Car Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\Images\Black and Red Modern Automotive Car Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bx-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bx-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="map-regular-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\Images\map-regular-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="car (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car (4).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="car (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\car (8).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bx-check" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bx-check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bx-cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\Images\bx-cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bxs-report" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bxs-report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="part (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\part (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="driving1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\Images\driving.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

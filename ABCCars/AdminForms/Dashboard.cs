@@ -1,18 +1,28 @@
-﻿using Guna.Charts.WinForms;
+﻿using ABCCars.Utils;
+using Guna.Charts.WinForms;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace ABCCars.AdminForms
 {
     public partial class Dashboard : Form
     {
+        DBConnection db = new DBConnection();
+        OrderModule order = new OrderModule();
+
         public Dashboard()
         {
             InitializeComponent();
         }
 
         private void Dashboard_Load(object sender, System.EventArgs e)
-        { 
+        {
+            // Get the total number of customers and orders
+            List<OrderList> Pending = new List<OrderList>();
+           
+
             // Convert the text to integer values
             int totalCustomers = int.Parse(cusCount.Text);
             int totalOrders = int.Parse(orderCount.Text);
@@ -55,7 +65,7 @@ namespace ABCCars.AdminForms
 
         public void doughnut()
         {
-            string[] months = { "January", "February", "March", "April" };
+            string[] orders = { "Orders", "Pending" };
 
             //Chart configuration
             chart2.XAxes.Display = false;
@@ -64,12 +74,12 @@ namespace ABCCars.AdminForms
             //Create a new dataset 
             var dataset = new Guna.Charts.WinForms.GunaDoughnutDataset();
             var r = new Random();
-            for (int i = 0; i < months.Length; i++)
+            for (int i = 0; i < orders.Length; i++)
             {
                 //random number
                 int num = r.Next(10, 100);
 
-                dataset.DataPoints.Add(months[i], num);
+                dataset.DataPoints.Add(orders[i], num);
             }
 
             //Add a new dataset to a chart.Datasets
@@ -81,7 +91,7 @@ namespace ABCCars.AdminForms
 
         public void barChart()
         {
-            string[] months = { "January", "February", "March", "April", "May", "June", "July" };
+            string[] months = { "August", "September" };
 
             //Chart configuration 
             chart.YAxes.GridLines.Display = false;

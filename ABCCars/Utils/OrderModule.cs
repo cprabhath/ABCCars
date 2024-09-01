@@ -182,5 +182,57 @@ namespace ABCCars.Utils
                 return null;
             }
         }
+        // ========================================================================================================
+
+        // ================================== Get order status ====================================================
+        public List<OrderList> GetOrderByStatus(string status)
+        {
+            try
+            {
+                List<OrderList> orderList = new List<OrderList>();
+                var reader = qe.ListAll("SELECT * FROM orders WHERE status = @status", new SqlParameter[] { new SqlParameter("@status", status) });
+
+                foreach (var item in reader)
+                {
+                    orderList.Add(new OrderList
+                    {
+                        OrderID = Convert.ToString(item["orderID"]),
+                        CustomerID = item["customerID"].ToString(),
+                        PartID = item["partID"].ToString(),
+                        VehicleID = item["vehicleID"].ToString(),
+                        Total = item["total"].ToString(),
+                        Status = item["status"].ToString(),
+                        CreatedAt = item["createdAt"].ToString(),
+                        UpdatedAt = item["updatedAt"].ToString()
+                    });
+                }
+
+                return orderList;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+        // ========================================================================================================
+
+
+        // ==================================== get Total sale ====================================================
+        public string GetTotalSale()
+        {
+            try
+            {
+                var reader = qe.ListAll("SELECT SUM(total) as total FROM orders", null);
+                return reader[0]["total"].ToString();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
     }
 }

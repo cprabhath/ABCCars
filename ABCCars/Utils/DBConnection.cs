@@ -157,13 +157,12 @@ namespace ABCCars
         }
         // ===================================================================================
 
-        // ================================== Get customer by ID =============================
+        // ==================================== Get customer by ID ==========================
         public List<CustomersList> GetCustomerById(int id)
         {
             try
             {
                 var reader = qe.ListAll("SELECT * FROM customers WHERE id = @id", new SqlParameter[] { new SqlParameter("@id", id) });
-
                 List<CustomersList> customersList = new List<CustomersList>();
 
                 foreach (var item in reader)
@@ -175,8 +174,7 @@ namespace ABCCars
                         Name = item["cusName"].ToString(),
                         Address = item["cusAddress"].ToString(),
                         Email = item["cusEmail"].ToString(),
-                        Phone = item["cusMobile"].ToString(),
-                        Status = Convert.ToInt32(item["status"])
+                        Phone = item["cusMobile"].ToString()
                     });
                 }
 
@@ -190,7 +188,40 @@ namespace ABCCars
                 return null;
             }
         }
+        // ===================================================================================
 
+        // ================================== Get customer by Email =============================
+        public List<CustomersList> GetCustomerByEmail(string email)
+        {
+            try
+            {
+                var reader = qe.ListAll("SELECT * FROM customers WHERE cusEmail = @email", new SqlParameter[] { new SqlParameter("@email", email) });
+                List<CustomersList> customersList = new List<CustomersList>();
+
+                foreach (var item in reader)
+                {
+                    customersList.Add(new CustomersList
+                    {
+                        Id = Convert.ToInt32(item["id"]),
+                        image = Properties.Resources.Black_and_Red_Modern_Automotive_Car_Logo,
+                        Name = item["cusName"].ToString(),
+                        Address = item["cusAddress"].ToString(),
+                        Email = item["cusEmail"].ToString(),
+                        Phone = item["cusMobile"].ToString()
+                    });
+                }
+
+                return customersList;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+       
         // ===================================================================================
 
         // =================================== Block a Customer ==============================
@@ -256,6 +287,50 @@ namespace ABCCars
                 new SqlParameter("@username", username));
             }
             catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+        // ===================================================================================
+
+        // ============================= Change Customer password =============================
+        public bool ChangeCustomerPassword(string email, string password)
+        {
+            try
+            {
+                var hashPassword = BCrypt.Net.BCrypt.HashPassword(password);
+
+                return qe.ExecuteNonQuery(
+                "UPDATE customers SET hashedpassword = @password, updatedAt = @update WHERE cusEmail = @email",
+                new SqlParameter("@password", hashPassword),
+                new SqlParameter("@update", DateTime.Now),
+                new SqlParameter("@email", email));
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+        // ===================================================================================
+
+        // ========================== Update Customer by Email ===============================
+        public bool UpdateCustomerByEmail(string email, string name, string address, string mobile)
+        {
+            try
+            {
+                return qe.ExecuteNonQuery(
+                "UPDATE customers SET cusName = @name, cusAddress = @address, cusMobile = @mobile, updatedAt = @update WHERE cusEmail = @email",
+                new SqlParameter("@name", name),
+                new SqlParameter("@address", address),
+                new SqlParameter("@mobile", mobile),
+                new SqlParameter("@update", DateTime.Now),
+                new SqlParameter("@email", email));
+            }
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
                 Console.WriteLine(e.Message);

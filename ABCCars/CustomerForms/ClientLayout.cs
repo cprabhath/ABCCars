@@ -8,9 +8,11 @@ namespace ABCCars.CustomerForms
     {
         Color activeColor = Color.FromArgb(146, 183, 255);
 
-        public ClientLayout()
+
+        public ClientLayout(string _username)
         {
             InitializeComponent();
+            txtUsername.Text = _username;
         }
 
         private void btnCarManage_Click(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace ABCCars.CustomerForms
             Panel panel = this.Load_Panel as Panel;
             if (panel != null)
             {
-                Account account = new Account();
+                Account account = new Account(txtUsername.Text);
                 account.TopLevel = false;
                 account.FormBorderStyle = FormBorderStyle.None;
                 account.Dock = DockStyle.Fill;
@@ -89,6 +91,7 @@ namespace ABCCars.CustomerForms
 
         private void ClientLayout_Load(object sender, EventArgs e)
         {
+            
             ResetButtonColors();
             btnCarManage.FillColor = activeColor;
 

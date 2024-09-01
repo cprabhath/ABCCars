@@ -5,7 +5,7 @@ using System.Windows;
 
 namespace ABCCars.Utils
 {
-    internal class Cars
+    internal class CarsModule
     {
         QueryExecutor qe = new QueryExecutor();
 
@@ -156,5 +156,32 @@ namespace ABCCars.Utils
             }
         }
         //  ===================================================================================
+
+        // ============================= add to Cart =================================
+        public bool AddToCart(string id, string name, string model, string qty, string image, string description, string condition, string price)
+        {
+            try
+            {
+                return qe.ExecuteNonQuery(
+                "INSERT INTO cart (carId, carName, carModel, carImage, carDescription, carCondition, carPrice, createdAt, carQty) VALUES (@id, @name, @model, @image, @description, @condition, @price, @createdAt, @qty)",
+                new SqlParameter("@id", id),
+                new SqlParameter("@name", name),
+                new SqlParameter("@model", model),
+                new SqlParameter("@description", description),
+                new SqlParameter("@condition", condition),
+                new SqlParameter("@price", price),
+                new SqlParameter("@image", image),
+                new SqlParameter("@qty", qty),
+                new SqlParameter("@createdAt", DateTime.Now));
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
     }
 }

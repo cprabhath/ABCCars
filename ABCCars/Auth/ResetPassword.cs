@@ -38,6 +38,7 @@ namespace ABCCars.Auth
         }
         // =======================================================================
 
+        // ======================== Reset Button =================================
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string email = txtUsername.Text;
@@ -133,11 +134,13 @@ namespace ABCCars.Auth
             txtUsername.Text = "";
         }
 
+        // ======================== Password Update Button ===============================
         private void btnPasswordUpdate_Click(object sender, EventArgs e)
         {
             var newPassword = txtNewPassword.Text;
             var confirmPassword = txtConfirmPassword.Text;
 
+            // ======================== Validate the new password fields ========================
             var validation = new NewPasswordValidationsValidator();
             var result = validation.Validate(new NewPasswordValidations(newPassword, confirmPassword));
 
@@ -152,10 +155,22 @@ namespace ABCCars.Auth
             }
             else
             {
-                // TODO: add login to update password in the database
-                MessageBox.Show("working");
-            }
+                // ======================== Update the password in the database ========================
+                var success = db.ChangeCustomerPassword(newPassword, txtUsername.Text);
 
+                if (success)
+                {
+                    MessageBox.Show("Password updated successfully", utils.SuccessTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    Login login = new Login();
+                    login.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update password", utils.ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            // ===============================================================================
         }
     }
 }

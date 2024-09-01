@@ -1,4 +1,5 @@
-﻿using ABCCars.Utils;
+﻿using ABCCars.CustomerForms.View;
+using ABCCars.Utils;
 using ABCCars.Validations;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace ABCCars.CustomerForms
     public partial class CarParts : Form
     {
         utils utils = new utils();
+        CarPartsModule carParts = new CarPartsModule();
         public CarParts()
         {
             InitializeComponent();
@@ -18,50 +20,18 @@ namespace ABCCars.CustomerForms
 
         private void CarParts_Load(object sender, EventArgs e)
         {
-            LoadCars();
+            LoadCarsParts();
         }
 
-        private void LoadCars(string searchQuery = "")
+        private void LoadCarsParts(string searchQuery = "")
         {
             // Clear existing controls in the FlowLayoutPanel
             flowLayoutPanel1.Controls.Clear();
 
-            // add dummy data
-            List<CarPartsList> carPartsLists = new List<CarPartsList>
-                {
-                new CarPartsList
-                {
-                    Name = "Rim",
-                    Description = "Rim for Toyota",
-                    Condition = "New",
-                    Price = "$350",
-                    Image = Properties.Resources.part__1_
-                },
-                new CarPartsList
-                {
-                    Name = "Spack Plug",
-                    Description = "Spack Plug for Honda Civic",
-                    Condition = "New",
-                    Price = "$60",
-                    Image = Properties.Resources.part__2_
-                },
-                new CarPartsList
-                {
-                    Name = "Alternator",
-                    Description = "Brand new Alternator Assembly",
-                    Condition = "New",
-                    Price = "$300",
-                    Image = Properties.Resources.part__3_
-                },
-                new CarPartsList
-                {
-                    Name = "Head Light",
-                    Description = "Head Light for Toyota CHR",
-                    Condition = "New",
-                    Price = "$750",
-                    Image = Properties.Resources.part__4_
-                }
-            };
+            // Add data from the database
+            List<CarPartsList> carPartsLists = new List<CarPartsList>();
+            carPartsLists = carParts.GetAllCarParts();
+            
 
             // Perform search filtering
             var filtersParts = carPartsLists
@@ -85,14 +55,16 @@ namespace ABCCars.CustomerForms
                     BuyButtonText = "Add to Cart"
                 };
 
+                // Add the card to the FlowLayoutPanel
                 carCard.ViewButtonClick += (s, e) =>
                 {
-
+                   
                 };
 
+                // Add the card to the FlowLayoutPanel
                 carCard.BuyButtonClick += (s, e) =>
                 {
-
+                    
                 };
 
                 // Add the card to the FlowLayoutPanel
@@ -103,7 +75,7 @@ namespace ABCCars.CustomerForms
         private void serachBox_TextChanged(object sender, EventArgs e)
         {
             string searchQuery = serachBox.Text.Trim().ToLower();
-            LoadCars(searchQuery); // Pass the selected sort option
+            LoadCarsParts(searchQuery); // Pass the selected sort option
         }
     }
 }

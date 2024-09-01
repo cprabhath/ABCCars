@@ -25,16 +25,13 @@ namespace ABCCars
         {
             // Check if the connection check is already in progress
             if (isConnectionCheckInProgress) return;
-
             isConnectionCheckInProgress = true;
-
             // =============== Progress bar to show the connection check progress ===============
             for (int i = 0; i <= 100; i += 20)
             {
                 await Task.Delay(500);
                 ProgressBar.Value = i;
             }
-
             // Check internet connection
             if (!IsInternetAvailable())
             {
@@ -45,7 +42,6 @@ namespace ABCCars
                     MessageBoxButtons.RetryCancel,
                     MessageBoxIcon.Error
                 );
-
                 // =============== Retry the connection check if the user clicks Retry ===============
                 if (result == DialogResult.Retry)
                 {
@@ -57,7 +53,6 @@ namespace ABCCars
                 {
                     Application.Exit();
                 }
-
                 return;
             }
 

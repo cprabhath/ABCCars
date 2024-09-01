@@ -1,4 +1,4 @@
-﻿using ABCCars.Auth;
+﻿using ABCCars.CustomerForms;
 using System;
 using System.Windows.Forms;
 
@@ -12,7 +12,7 @@ namespace ABCCars
             // ================== Initialize the program ==================
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminLayout());
+            Application.Run(new OnBoard());
             // ============================================================
         }
     }

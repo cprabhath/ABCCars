@@ -214,5 +214,45 @@ namespace ABCCars
 
         }
 
+        public List<Dictionary<string, object>> ListAll(string query, SqlParameter[] parameters = null)
+        {
+            List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(cs.connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // If parameters are provided, add them to the command
+                        if (parameters != null)
+                        {
+                            command.Parameters.AddRange(parameters);
+                        }
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Dictionary<string, object> row = new Dictionary<string, object>();
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    row[reader.GetName(i)] = reader.GetValue(i);
+                                }
+                                list.Add(row);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return list;
+        }
+
+
     }
 }

@@ -69,7 +69,7 @@ namespace ABCCars
             else if (db.UserLogin(username, password))
             {
                 this.Hide();
-                CustomerDashboard customerDashboard = new CustomerDashboard();
+                AdminLayout customerDashboard = new AdminLayout();
                 customerDashboard.Show();
             }
             // =============================================================================

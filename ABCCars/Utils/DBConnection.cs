@@ -3,6 +3,7 @@ using System.Data;
 using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using ABCCars.Utils;
 
 // This class is used to connect to the database and execute queries
 namespace ABCCars
@@ -105,12 +106,124 @@ namespace ABCCars
         // ===================================================================================
 
         // ========================= Get the customer details ================================
-        public DataTable GetCustomerDetails()
+        public List<CustomersList> customersLists()
         {
-            return qe.TableExecutor("SELECT * FROM customers");
+            try
+            {
+                var reader = qe.ListAll("SELECT * FROM customers WHERE deletedAt IS NULL");
+                List<CustomersList> customersList = new List<CustomersList>();
+
+                foreach (var item in reader)
+                {
+                    customersList.Add(new CustomersList
+                    {
+                        Id = Convert.ToInt32(item["id"]),
+                        image = Properties.Resources.Black_and_Red_Modern_Automotive_Car_Logo,
+                        Name = item["cusName"].ToString(),
+                        Address = item["cusAddress"].ToString(),
+                        Email = item["cusEmail"].ToString(),
+                        Phone = item["cusMobile"].ToString()
+                    });
+                }
+
+                return customersList;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+        // ===================================================================================
+
+        // ============================ Delete a Customer ====================================
+        public bool DeleteCustomer(int id)
+        {
+            try
+            {
+                return qe.ExecuteNonQuery(
+                "UPDATE customers SET deletedAt = @date WHERE id = @id ",
+                new SqlParameter("@date", DateTime.Now),
+                new SqlParameter("@id", id));
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return false;
+            }
         }
         // ===================================================================================
 
+        // ================================== Get customer by ID =============================
+        public List<CustomersList> GetCustomerById(int id)
+        {
+            try
+            {
+                var reader = qe.ListAll("SELECT * FROM customers WHERE id = @id", new SqlParameter[] { new SqlParameter("@id", id) });
+
+                List<CustomersList> customersList = new List<CustomersList>();
+
+                foreach (var item in reader)
+                {
+                    customersList.Add(new CustomersList
+                    {
+                        Id = Convert.ToInt32(item["id"]),
+                        image = Properties.Resources.Black_and_Red_Modern_Automotive_Car_Logo,
+                        Name = item["cusName"].ToString(),
+                        Address = item["cusAddress"].ToString(),
+                        Email = item["cusEmail"].ToString(),
+                        Phone = item["cusMobile"].ToString(),
+                        Status = Convert.ToInt32(item["status"])
+                    });
+                }
+
+                return customersList;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+        // ===================================================================================
+
+        // =================================== Block a Customer ==============================
+        public bool BlockCustomer(int id)
+        {
+            try
+            {
+                return qe.ExecuteNonQuery(
+                "UPDATE customers SET status = 0 WHERE id = @id",
+                new SqlParameter("@id", id));
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+        // ================================= Unblock a Customer ==============================
+        public bool UnblockCustomer(int id)
+        {
+            try
+            {
+                return qe.ExecuteNonQuery(
+                "UPDATE customers SET status = 1 WHERE id = @id",
+                new SqlParameter("@id", id));
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
 
         // ================================= Get All Emails ==================================
         public List<string> GetAllEmails()
@@ -150,4 +263,5 @@ namespace ABCCars
             }
         }
     }
+    // ===================================================================================
 }

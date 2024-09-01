@@ -10,6 +10,8 @@ namespace ABCCars.CustomerForms
         public CarPartsCard()
         {
             InitializeComponent();
+            btnView.Click += viewButton_Click;
+            btnAddtoCart.Click += buyButton_Click;
         }
 
         #region Properties
@@ -60,9 +62,22 @@ namespace ABCCars.CustomerForms
         }
         #endregion
 
-        private void btnAddtoCart_Click(object sender, EventArgs e)
+        #region Events
+        public event EventHandler ViewButtonClick;
+        public event EventHandler BuyButtonClick;
+
+        private void viewButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{_title} added to cart!");
+            if (this.ViewButtonClick != null)
+                this.ViewButtonClick(this, e);
         }
+
+        private void buyButton_Click(object sender, EventArgs e)
+        {
+            if (this.BuyButtonClick != null)
+                this.BuyButtonClick(this, e);
+        }
+
+        #endregion
     }
 }

@@ -47,6 +47,15 @@
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
     </Reference>
@@ -56,8 +65,10 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp, Version=111.4.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.111.4.0\lib\net48\RestSharp.dll</HintPath>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp, Version=112.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.112.0.0\lib\net48\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -90,8 +101,8 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
@@ -99,7 +110,7 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
@@ -113,8 +124,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
@@ -132,6 +143,8 @@
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -143,19 +156,63 @@
     <Reference Include="Telerik.FontIcons, Version=3.0.0.0, Culture=neutral, PublicKeyToken=20b4b0547069c4f8, processorArchitecture=MSIL">
       <HintPath>..\packages\Telerik.FontIcons.3.0.0\lib\netstandard2.0\Telerik.FontIcons.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminForms\AddNewItem\AddNewCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\AddNewItem\AddNewCar.Designer.cs">
+      <DependentUpon>AddNewCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\AddNewItem\AddNewParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\AddNewItem\AddNewParts.Designer.cs">
+      <DependentUpon>AddNewParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\AddNewItem\CarEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\AddNewItem\CarEdit.Designer.cs">
+      <DependentUpon>CarEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\AddNewItem\CarPartEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\AddNewItem\CarPartEdit.Designer.cs">
+      <DependentUpon>CarPartEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\AddNewItem\CustomerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\AddNewItem\CustomerEdit.Designer.cs">
+      <DependentUpon>CustomerEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForms\AdminLayout.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminForms\AdminLayout.Designer.cs">
       <DependentUpon>AdminLayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForms\CarCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminForms\CarCard.Designer.cs">
+      <DependentUpon>CarCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForms\CarManage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminForms\CarManage.Designer.cs">
       <DependentUpon>CarManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\CarPartCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminForms\CarPartCard.Designer.cs">
+      <DependentUpon>CarPartCard.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminForms\CarPartsManage.cs">
       <SubType>Form</SubType>
@@ -181,11 +238,17 @@
     <Compile Include="AdminForms\OrderManage.Designer.cs">
       <DependentUpon>OrderManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminForms\Reports.cs">
+    <Compile Include="AdminForms\OrdersCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminForms\OrdersCard.Designer.cs">
+      <DependentUpon>OrdersCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\ReportsManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForms\Reports.Designer.cs">
-      <DependentUpon>Reports.cs</DependentUpon>
+    <Compile Include="AdminForms\ReportsManage.Designer.cs">
+      <DependentUpon>ReportsManage.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminForms\Settings.cs">
       <SubType>Form</SubType>
@@ -205,11 +268,23 @@
     <Compile Include="Auth\ResetPassword.Designer.cs">
       <DependentUpon>ResetPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerForms\Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForms\Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerForms\CarCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustomerForms\CarCard.Designer.cs">
       <DependentUpon>CarCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerForms\CarParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForms\CarParts.Designer.cs">
+      <DependentUpon>CarParts.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerForms\CarPartsCard.cs">
       <SubType>UserControl</SubType>
@@ -217,13 +292,35 @@
     <Compile Include="CustomerForms\CarPartsCard.Designer.cs">
       <DependentUpon>CarPartsCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\ConnectionString.cs" />
-    <Compile Include="CustomerForms\CustomerDashboard.cs">
+    <Compile Include="CustomerForms\Cars.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerForms\CustomerDashboard.Designer.cs">
-      <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    <Compile Include="CustomerForms\Cars.Designer.cs">
+      <DependentUpon>Cars.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerForms\ClientLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForms\ClientLayout.Designer.cs">
+      <DependentUpon>ClientLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerForms\Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForms\Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportView.Designer.cs">
+      <DependentUpon>ReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\CarList.cs" />
+    <Compile Include="Utils\CarPartsList.cs" />
+    <Compile Include="Utils\Cars.cs" />
+    <Compile Include="Utils\ConnectionString.cs" />
+    <Compile Include="Utils\CustomersList.cs" />
     <Compile Include="Utils\DBConnection.cs" />
     <Compile Include="Auth\Login.cs">
       <SubType>Form</SubType>
@@ -240,17 +337,36 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\MailSender.cs" />
+    <Compile Include="Utils\OrderList.cs" />
     <Compile Include="Utils\QueryExecutor.cs" />
     <Compile Include="Validations\CustomerRegistrationValidations.cs" />
     <Compile Include="Validations\LoginValidation.cs" />
     <Compile Include="Utils\utils.cs" />
     <Compile Include="Validations\NewPasswordValidations.cs" />
     <Compile Include="Validations\ResetPasswordValidations.cs" />
+    <EmbeddedResource Include="AdminForms\AddNewItem\AddNewCar.resx">
+      <DependentUpon>AddNewCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\AddNewItem\CarEdit.resx">
+      <DependentUpon>CarEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\AddNewItem\CarPartEdit.resx">
+      <DependentUpon>CarPartEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\AddNewItem\CustomerEdit.resx">
+      <DependentUpon>CustomerEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\AdminLayout.resx">
       <DependentUpon>AdminLayout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\CarCard.resx">
+      <DependentUpon>CarCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\CarManage.resx">
       <DependentUpon>CarManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\CarPartCard.resx">
+      <DependentUpon>CarPartCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\CarPartsManage.resx">
       <DependentUpon>CarPartsManage.cs</DependentUpon>
@@ -264,8 +380,11 @@
     <EmbeddedResource Include="AdminForms\OrderManage.resx">
       <DependentUpon>OrderManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminForms\Reports.resx">
-      <DependentUpon>Reports.cs</DependentUpon>
+    <EmbeddedResource Include="AdminForms\OrdersCard.resx">
+      <DependentUpon>OrdersCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\ReportsManage.resx">
+      <DependentUpon>ReportsManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
@@ -280,14 +399,26 @@
     <EmbeddedResource Include="Auth\ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForms\Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForms\CarParts.resx">
+      <DependentUpon>CarParts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerForms\CarPartsCard.resx">
       <DependentUpon>CarPartsCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerForms\CustomerDashboard.resx">
-      <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerForms\Cars.resx">
+      <DependentUpon>Cars.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerForms\CarCard.resx">
       <DependentUpon>CarCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForms\ClientLayout.resx">
+      <DependentUpon>ClientLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForms\Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OnBoard.resx">
       <DependentUpon>OnBoard.cs</DependentUpon>
@@ -302,6 +433,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\ReportView.resx">
+      <DependentUpon>ReportView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -356,6 +490,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bxs-report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bx-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car %284%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car %285%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car %286%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car %287%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car %288%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\part %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\part %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\part %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\part %284%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bx-check.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,21 +10,15 @@ namespace ABCCars.CustomerForms
         public CarCard()
         {
             InitializeComponent();
+            btnView.Click += viewButton_Click;
+            btnAddtoCart.Click += buyButton_Click;
         }
 
         #region Properties
+
         private string _title;
         private string _description;
         private Image _image;
-        private string _button;
-
-        [Category("Custom Props")]
-        public string Button
-        {
-            get { return _button; }
-            set { _button = value; btnAddtoCart.Text = value; }
-        }
-
 
         [Category("Custom Props")]
         public string Title
@@ -49,7 +43,7 @@ namespace ABCCars.CustomerForms
         }
 
         [Category("Custom Props")]
-        public Image Image
+        public Image CarImage
         {
             get { return _image; }
             set
@@ -59,12 +53,38 @@ namespace ABCCars.CustomerForms
             }
         }
 
+        [Category("Custom Props")]
+        public string ViewButtonText
+        {
+            get { return btnView.Text; }
+            set { btnView.Text = value; }
+        }
+
+        [Category("Custom Props")]
+        public string BuyButtonText
+        {
+            get { return btnAddtoCart.Text; }
+            set { btnAddtoCart.Text = value; }
+        }
 
         #endregion
 
-        private void btnAddtoCart_Click(object sender, EventArgs e)
+        #region Events
+        public event EventHandler ViewButtonClick;
+        public event EventHandler BuyButtonClick;
+
+        private void viewButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{_title} added to cart!");
+            if (this.ViewButtonClick != null)
+                this.ViewButtonClick(this, e);
         }
+
+        private void buyButton_Click(object sender, EventArgs e)
+        {
+            if (this.BuyButtonClick != null)
+                this.BuyButtonClick(this, e);
+        }
+
+        #endregion
     }
 }

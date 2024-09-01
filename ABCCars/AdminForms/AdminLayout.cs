@@ -159,7 +159,7 @@ namespace ABCCars
             Panel panel = this.Load_Panel as Panel;
             if (panel != null)
             {
-                Reports reports = new Reports();
+                ReportsManage reports = new ReportsManage();
                 reports.TopLevel = false;
                 reports.FormBorderStyle = FormBorderStyle.None;
                 reports.Dock = DockStyle.Fill;

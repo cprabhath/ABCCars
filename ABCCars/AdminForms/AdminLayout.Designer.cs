@@ -89,19 +89,21 @@
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(15, 115);
+            this.guna2Separator1.FillColor = System.Drawing.Color.White;
+            this.guna2Separator1.FillThickness = 2;
+            this.guna2Separator1.Location = new System.Drawing.Point(-1, 101);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(252, 12);
+            this.guna2Separator1.Size = new System.Drawing.Size(288, 12);
             this.guna2Separator1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label1.Location = new System.Drawing.Point(59, 76);
+            this.label1.Location = new System.Drawing.Point(60, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 30);
+            this.label1.Size = new System.Drawing.Size(156, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Admin Panel";
             // 
@@ -240,22 +242,22 @@
             // 
             // btnLogOut
             // 
+            this.btnLogOut.BorderRadius = 20;
             this.btnLogOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLogOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogOut.FillColor = System.Drawing.Color.White;
             this.btnLogOut.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.btnLogOut.ForeColor = System.Drawing.Color.Black;
             this.btnLogOut.Image = global::ABCCars.Properties.Resources.bx_log_out;
-            this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 725);
+            this.btnLogOut.Location = new System.Drawing.Point(39, 701);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(0);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnLogOut.Size = new System.Drawing.Size(286, 57);
+            this.btnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnLogOut.Size = new System.Drawing.Size(193, 57);
             this.btnLogOut.TabIndex = 7;
             this.btnLogOut.Text = "Logout";
-            this.btnLogOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnCarManage
@@ -283,7 +285,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ABCCars.Properties.Resources.Black_and_Red_Modern_Automotive_Car_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(78, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(81, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(121, 42);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

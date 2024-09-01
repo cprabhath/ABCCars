@@ -1,7 +1,60 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Projects\\ABCCars\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\adminforms\\carmanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\adminforms\\carmanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\adminforms\\carmanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\adminforms\\carmanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\adminforms\\carcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\adminforms\\carcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\utils\\cars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\utils\\cars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\adminforms\\addnewitem\\addnewcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\adminforms\\addnewitem\\addnewcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\adminforms\\addnewitem\\addnewcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\adminforms\\addnewitem\\addnewcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\utils\\carlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\utils\\carlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\adminforms\\ordermanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\adminforms\\ordermanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\adminforms\\ordermanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\adminforms\\ordermanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\adminforms\\addnewitem\\caredit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\adminforms\\addnewitem\\caredit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\adminforms\\addnewitem\\caredit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\adminforms\\addnewitem\\caredit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\utils\\carpartslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\utils\\carpartslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|e:\\projects\\abccars\\abccars\\utils\\orderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E061A774-54A9-4789-A345-4FBAAC545023}|ABCCars\\ABCCars.csproj|solutionrelative:abccars\\utils\\orderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +62,175 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddNewCar.cs",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\AddNewItem\\AddNewCar.cs",
+              "RelativeDocumentMoniker": "ABCCars\\AdminForms\\AddNewItem\\AddNewCar.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\AddNewItem\\AddNewCar.cs",
+              "RelativeToolTip": "ABCCars\\AdminForms\\AddNewItem\\AddNewCar.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAYwCkAAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T00:08:25.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Cars.cs",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\Utils\\Cars.cs",
+              "RelativeDocumentMoniker": "ABCCars\\Utils\\Cars.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\Utils\\Cars.cs",
+              "RelativeToolTip": "ABCCars\\Utils\\Cars.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAF0AAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T23:59:20.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AddNewCar.cs [Design]",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\AddNewItem\\AddNewCar.cs",
+              "RelativeDocumentMoniker": "ABCCars\\AdminForms\\AddNewItem\\AddNewCar.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\AddNewItem\\AddNewCar.cs [Design]",
+              "RelativeToolTip": "ABCCars\\AdminForms\\AddNewItem\\AddNewCar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T23:56:58.872Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CarCard.cs [Design]",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\CarCard.cs",
+              "RelativeDocumentMoniker": "ABCCars\\AdminForms\\CarCard.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\CarCard.cs [Design]",
+              "RelativeToolTip": "ABCCars\\AdminForms\\CarCard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T23:56:48.624Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderManage.cs [Design]",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\OrderManage.cs",
+              "RelativeDocumentMoniker": "ABCCars\\AdminForms\\OrderManage.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\OrderManage.cs [Design]",
+              "RelativeToolTip": "ABCCars\\AdminForms\\OrderManage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T23:49:31.448Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CarManage.cs [Design]",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\CarManage.cs",
+              "RelativeDocumentMoniker": "ABCCars\\AdminForms\\CarManage.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\CarManage.cs [Design]",
+              "RelativeToolTip": "ABCCars\\AdminForms\\CarManage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T23:55:12.848Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CarManage.cs",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\CarManage.cs",
+              "RelativeDocumentMoniker": "ABCCars\\AdminForms\\CarManage.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\CarManage.cs",
+              "RelativeToolTip": "ABCCars\\AdminForms\\CarManage.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAgwEQAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T23:56:42.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CarList.cs",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\Utils\\CarList.cs",
+              "RelativeDocumentMoniker": "ABCCars\\Utils\\CarList.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\Utils\\CarList.cs",
+              "RelativeToolTip": "ABCCars\\Utils\\CarList.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T23:58:45.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CarEdit.cs [Design]",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\AddNewItem\\CarEdit.cs",
+              "RelativeDocumentMoniker": "ABCCars\\AdminForms\\AddNewItem\\CarEdit.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\AddNewItem\\CarEdit.cs [Design]",
+              "RelativeToolTip": "ABCCars\\AdminForms\\AddNewItem\\CarEdit.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T00:03:38.087Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CarEdit.cs",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\AddNewItem\\CarEdit.cs",
+              "RelativeDocumentMoniker": "ABCCars\\AdminForms\\AddNewItem\\CarEdit.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\AddNewItem\\CarEdit.cs",
+              "RelativeToolTip": "ABCCars\\AdminForms\\AddNewItem\\CarEdit.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAYwCkAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T00:05:45.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderManage.cs",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\OrderManage.cs",
+              "RelativeDocumentMoniker": "ABCCars\\AdminForms\\OrderManage.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\AdminForms\\OrderManage.cs",
+              "RelativeToolTip": "ABCCars\\AdminForms\\OrderManage.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAYwDEAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T23:49:33.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CarPartsList.cs",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\Utils\\CarPartsList.cs",
+              "RelativeDocumentMoniker": "ABCCars\\Utils\\CarPartsList.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\Utils\\CarPartsList.cs",
+              "RelativeToolTip": "ABCCars\\Utils\\CarPartsList.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T23:59:01.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OrderList.cs",
+              "DocumentMoniker": "E:\\Projects\\ABCCars\\ABCCars\\Utils\\OrderList.cs",
+              "RelativeDocumentMoniker": "ABCCars\\Utils\\OrderList.cs",
+              "ToolTip": "E:\\Projects\\ABCCars\\ABCCars\\Utils\\OrderList.cs",
+              "RelativeToolTip": "ABCCars\\Utils\\OrderList.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T23:49:14.857Z",
+              "EditorCaption": ""
             }
           ]
         }

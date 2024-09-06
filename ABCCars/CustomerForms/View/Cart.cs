@@ -29,6 +29,8 @@ namespace ABCCars.CustomerForms.View
 
         private void Cart_Load(object sender, EventArgs e)
         {
+            flowLayoutPanel.Controls.Clear();
+
             var result = cartModule.GetAllByCustomerID(id);
             if (result != null)
             {

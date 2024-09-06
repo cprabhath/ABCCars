@@ -100,5 +100,11 @@ namespace ABCCars.CustomerForms
             string searchQuery = serachBox.Text.Trim().ToLower();
             LoadCarsParts(searchQuery); // Pass the selected sort option
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var cart = new Cart(id);
+            cart.ShowDialog();
+        }
     }
 }

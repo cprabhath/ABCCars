@@ -318,12 +318,6 @@
     <Compile Include="CustomerForms\ClientLayout.Designer.cs">
       <DependentUpon>ClientLayout.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerForms\Orders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerForms\Orders.Designer.cs">
-      <DependentUpon>Orders.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomerForms\View\Cart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -468,9 +462,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerForms\ClientLayout.resx">
       <DependentUpon>ClientLayout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerForms\Orders.resx">
-      <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerForms\View\Cart.resx">
       <DependentUpon>Cart.cs</DependentUpon>

@@ -89,7 +89,6 @@ E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.CustomerForms.CarPartsCard.resourc
 E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.CustomerForms.Cars.resources
 E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.CustomerForms.CarCard.resources
 E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.CustomerForms.ClientLayout.resources
-E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.CustomerForms.Orders.resources
 E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.CustomerForms.View.Cart.resources
 E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.CustomerForms.View.ViewCar.resources
 E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.CustomerForms.View.ViewCarPart.resources

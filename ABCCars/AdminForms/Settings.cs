@@ -64,6 +64,41 @@ namespace ABCCars.AdminForms
 
                 }
             }
+
+            if(CheckChangeUsername.Checked)
+            {
+                var oldUsername = txtOldUsername.Text;
+                var newUsername = txtNewUsername.Text;
+
+               
+                // Update the username
+                if (db.ChangeAdminUsername(oldUsername, newUsername))
+                {
+                    MessageBox.Show("Username changed successfully", utils.SuccessTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Unable to change the username at this moment", utils.ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+
+            if(CheckEmailChange.Checked)
+            {
+                var existingEmail = txtExistingEmail.Text;
+                var newEmail = txtNewEmail.Text;
+
+                // Update the email
+                if (db.ChangeAdminEmail(existingEmail, newEmail))
+                {
+                    MessageBox.Show("Email changed successfully", utils.SuccessTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Unable to change the email at this moment", utils.ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
         }
 
         private void CheckChangeUsername_CheckedChanged(object sender, EventArgs e)

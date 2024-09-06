@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminLayout));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Load_Panel = new System.Windows.Forms.Panel();
             this.btnReports = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.btnSettings = new Guna.UI2.WinForms.Guna2Button();
@@ -42,7 +39,10 @@
             this.btnCarPartManage = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnCarManage = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Load_Panel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,7 +63,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1371, 783);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1285, 724);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -84,39 +84,8 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(286, 783);
+            this.panel1.Size = new System.Drawing.Size(268, 724);
             this.panel1.TabIndex = 0;
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.FillColor = System.Drawing.Color.White;
-            this.guna2Separator1.FillThickness = 2;
-            this.guna2Separator1.Location = new System.Drawing.Point(-1, 101);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(288, 12);
-            this.guna2Separator1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label1.Location = new System.Drawing.Point(60, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 31);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Admin Panel";
-            // 
-            // Load_Panel
-            // 
-            this.Load_Panel.AutoSize = true;
-            this.Load_Panel.BackColor = System.Drawing.SystemColors.Window;
-            this.Load_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Load_Panel.Location = new System.Drawing.Point(286, 0);
-            this.Load_Panel.Margin = new System.Windows.Forms.Padding(0);
-            this.Load_Panel.Name = "Load_Panel";
-            this.Load_Panel.Size = new System.Drawing.Size(1085, 783);
-            this.Load_Panel.TabIndex = 1;
             // 
             // btnReports
             // 
@@ -128,11 +97,11 @@
             this.btnReports.ForeColor = System.Drawing.Color.Black;
             this.btnReports.Image = global::ABCCars.Properties.Resources.bxs_report;
             this.btnReports.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnReports.Location = new System.Drawing.Point(0, 530);
+            this.btnReports.Location = new System.Drawing.Point(0, 462);
             this.btnReports.Margin = new System.Windows.Forms.Padding(0);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnReports.Size = new System.Drawing.Size(287, 80);
+            this.btnReports.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnReports.Size = new System.Drawing.Size(269, 64);
             this.btnReports.TabIndex = 13;
             this.btnReports.Text = "Reports";
             this.btnReports.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -150,11 +119,11 @@
             this.btnDashboard.HoverState.FillColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnDashboard.Image = global::ABCCars.Properties.Resources.bx_pie_chart_alt_2;
             this.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDashboard.Location = new System.Drawing.Point(-1, 130);
+            this.btnDashboard.Location = new System.Drawing.Point(-1, 142);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(0);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(286, 80);
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnDashboard.Size = new System.Drawing.Size(269, 64);
             this.btnDashboard.TabIndex = 12;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -170,11 +139,11 @@
             this.btnSettings.ForeColor = System.Drawing.Color.Black;
             this.btnSettings.Image = global::ABCCars.Properties.Resources.bx_cog;
             this.btnSettings.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSettings.Location = new System.Drawing.Point(-1, 610);
+            this.btnSettings.Location = new System.Drawing.Point(-1, 526);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(0);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(287, 80);
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnSettings.Size = new System.Drawing.Size(269, 64);
             this.btnSettings.TabIndex = 11;
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -190,11 +159,11 @@
             this.btnCustomerManage.ForeColor = System.Drawing.Color.Black;
             this.btnCustomerManage.Image = global::ABCCars.Properties.Resources.bx_user;
             this.btnCustomerManage.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCustomerManage.Location = new System.Drawing.Point(0, 450);
+            this.btnCustomerManage.Location = new System.Drawing.Point(0, 398);
             this.btnCustomerManage.Margin = new System.Windows.Forms.Padding(0);
             this.btnCustomerManage.Name = "btnCustomerManage";
-            this.btnCustomerManage.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnCustomerManage.Size = new System.Drawing.Size(286, 80);
+            this.btnCustomerManage.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnCustomerManage.Size = new System.Drawing.Size(268, 64);
             this.btnCustomerManage.TabIndex = 10;
             this.btnCustomerManage.Text = "Customer Management";
             this.btnCustomerManage.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -210,11 +179,11 @@
             this.btnOrderManage.ForeColor = System.Drawing.Color.Black;
             this.btnOrderManage.Image = global::ABCCars.Properties.Resources.bx_car;
             this.btnOrderManage.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnOrderManage.Location = new System.Drawing.Point(0, 370);
+            this.btnOrderManage.Location = new System.Drawing.Point(0, 334);
             this.btnOrderManage.Margin = new System.Windows.Forms.Padding(0);
             this.btnOrderManage.Name = "btnOrderManage";
-            this.btnOrderManage.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnOrderManage.Size = new System.Drawing.Size(286, 80);
+            this.btnOrderManage.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnOrderManage.Size = new System.Drawing.Size(268, 64);
             this.btnOrderManage.TabIndex = 9;
             this.btnOrderManage.Text = "Order Management";
             this.btnOrderManage.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -230,11 +199,11 @@
             this.btnCarPartManage.ForeColor = System.Drawing.Color.Black;
             this.btnCarPartManage.Image = global::ABCCars.Properties.Resources.bx_store;
             this.btnCarPartManage.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCarPartManage.Location = new System.Drawing.Point(0, 290);
+            this.btnCarPartManage.Location = new System.Drawing.Point(0, 270);
             this.btnCarPartManage.Margin = new System.Windows.Forms.Padding(0);
             this.btnCarPartManage.Name = "btnCarPartManage";
-            this.btnCarPartManage.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnCarPartManage.Size = new System.Drawing.Size(286, 80);
+            this.btnCarPartManage.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnCarPartManage.Size = new System.Drawing.Size(268, 64);
             this.btnCarPartManage.TabIndex = 8;
             this.btnCarPartManage.Text = "Car Part Management";
             this.btnCarPartManage.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -251,11 +220,11 @@
             this.btnLogOut.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.btnLogOut.ForeColor = System.Drawing.Color.Black;
             this.btnLogOut.Image = global::ABCCars.Properties.Resources.bx_log_out;
-            this.btnLogOut.Location = new System.Drawing.Point(39, 701);
+            this.btnLogOut.Location = new System.Drawing.Point(53, 659);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(0);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLogOut.Size = new System.Drawing.Size(193, 57);
+            this.btnLogOut.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnLogOut.Size = new System.Drawing.Size(154, 46);
             this.btnLogOut.TabIndex = 7;
             this.btnLogOut.Text = "Logout";
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
@@ -272,34 +241,69 @@
             this.btnCarManage.HoverState.FillColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnCarManage.Image = global::ABCCars.Properties.Resources.bx_car;
             this.btnCarManage.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCarManage.Location = new System.Drawing.Point(0, 210);
+            this.btnCarManage.Location = new System.Drawing.Point(0, 206);
             this.btnCarManage.Margin = new System.Windows.Forms.Padding(0);
             this.btnCarManage.Name = "btnCarManage";
-            this.btnCarManage.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnCarManage.Size = new System.Drawing.Size(286, 80);
+            this.btnCarManage.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnCarManage.Size = new System.Drawing.Size(268, 64);
             this.btnCarManage.TabIndex = 3;
             this.btnCarManage.Text = "Car Management";
             this.btnCarManage.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCarManage.Click += new System.EventHandler(this.btnCarManage_Click);
             // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.FillColor = System.Drawing.Color.White;
+            this.guna2Separator1.FillThickness = 2;
+            this.guna2Separator1.Location = new System.Drawing.Point(-1, 81);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(270, 10);
+            this.guna2Separator1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label1.Location = new System.Drawing.Point(80, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Admin Panel";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ABCCars.Properties.Resources.Black_and_Red_Modern_Automotive_Car_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(81, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(97, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 42);
+            this.pictureBox1.Size = new System.Drawing.Size(97, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // Load_Panel
+            // 
+            this.Load_Panel.AutoSize = true;
+            this.Load_Panel.BackColor = System.Drawing.SystemColors.Window;
+            this.Load_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Load_Panel.Location = new System.Drawing.Point(268, 0);
+            this.Load_Panel.Margin = new System.Windows.Forms.Padding(0);
+            this.Load_Panel.Name = "Load_Panel";
+            this.Load_Panel.Size = new System.Drawing.Size(1017, 724);
+            this.Load_Panel.TabIndex = 1;
+            // 
             // AdminLayout
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1371, 783);
+            this.ClientSize = new System.Drawing.Size(1285, 724);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "AdminLayout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

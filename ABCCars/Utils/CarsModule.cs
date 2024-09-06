@@ -28,7 +28,7 @@ namespace ABCCars.Utils
                         Condition = item["carCondition"].ToString(),
                         Price = item["carPrice"].ToString(),
                         qty = item["carQty"].ToString(),
-                        Image = Properties.Resources.bx_car,
+                        Image = item["carImage"].ToString(),
                         CreatedAt = item["createdAt"].ToString(),
                         UpdatedAt = item["updatedAt"].ToString()
                     });
@@ -59,14 +59,14 @@ namespace ABCCars.Utils
                 {
                     carList.Add(new CarList
                     {
-                        carID = Convert.ToString(item["id"]),
+                        carID = item["carId"].ToString(),
                         Name = item["carName"].ToString(),
                         Model = item["carModel"].ToString(),
                         Description = item["carDescription"].ToString(),
                         Condition = item["carCondition"].ToString(),
                         Price = item["carPrice"].ToString(),
                         qty = item["carQty"].ToString(),
-                        Image = Properties.Resources.bx_car,
+                        Image = item["carImage"].ToString(),
                         CreatedAt = item["createdAt"].ToString(),
                         UpdatedAt = item["updatedAt"].ToString()
                     });
@@ -180,6 +180,28 @@ namespace ABCCars.Utils
                 MessageBox.Show(e.Message);
                 Console.WriteLine(e.Message);
                 return false;
+            }
+        }
+
+        // ====================================== Get Last ID ======================================
+        public string GetLastID()
+        {
+            try
+            {
+                var reader = qe.ListAll("SELECT TOP 1 * FROM cars ORDER BY id DESC");
+
+                foreach (var item in reader)
+                {
+                    return item["carId"].ToString();
+                }
+
+                return null;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return null;
             }
         }
 

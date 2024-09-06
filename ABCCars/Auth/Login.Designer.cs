@@ -66,7 +66,7 @@
             this.materialLabel2.Location = new System.Drawing.Point(656, 80);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(220, 24);
+            this.materialLabel2.Size = new System.Drawing.Size(220, 23);
             this.materialLabel2.TabIndex = 2;
             this.materialLabel2.Text = "Please Login to Continue";
             // 
@@ -140,7 +140,7 @@
             this.materialLabel3.Location = new System.Drawing.Point(549, 121);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(58, 24);
+            this.materialLabel3.Size = new System.Drawing.Size(58, 23);
             this.materialLabel3.TabIndex = 7;
             this.materialLabel3.Text = "Email";
             // 
@@ -153,7 +153,7 @@
             this.materialLabel4.Location = new System.Drawing.Point(549, 215);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(94, 24);
+            this.materialLabel4.Size = new System.Drawing.Size(94, 23);
             this.materialLabel4.TabIndex = 8;
             this.materialLabel4.Text = "Password";
             // 
@@ -212,7 +212,7 @@
             this.materialLabel1.Location = new System.Drawing.Point(609, 420);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(207, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(207, 23);
             this.materialLabel1.TabIndex = 12;
             this.materialLabel1.Text = "Don\'t have an account ?";
             // 
@@ -226,7 +226,7 @@
             this.materialLabel5.Location = new System.Drawing.Point(575, 455);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(209, 24);
+            this.materialLabel5.Size = new System.Drawing.Size(209, 23);
             this.materialLabel5.TabIndex = 13;
             this.materialLabel5.Text = "Forgot your password ?";
             // 
@@ -256,8 +256,8 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 505);
             this.Controls.Add(this.txtResetPassword);

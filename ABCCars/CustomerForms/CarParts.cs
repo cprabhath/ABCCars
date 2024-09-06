@@ -4,6 +4,7 @@ using ABCCars.Validations;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -13,9 +14,12 @@ namespace ABCCars.CustomerForms
     {
         utils utils = new utils();
         CarPartsModule carParts = new CarPartsModule();
-        public CarParts()
+        CartModule cartModule = new CartModule();
+        public readonly int id;
+        public CarParts(List<int> _customerID)
         {
             InitializeComponent();
+            id = _customerID[0];
         }
 
         private void CarParts_Load(object sender, EventArgs e)
@@ -25,8 +29,10 @@ namespace ABCCars.CustomerForms
 
         private void LoadCarsParts(string searchQuery = "")
         {
+
             // Clear existing controls in the FlowLayoutPanel
             flowLayoutPanel1.Controls.Clear();
+            getCount();
 
             // Add data from the database
             List<CarPartsList> carPartsLists = new List<CarPartsList>();
@@ -48,7 +54,7 @@ namespace ABCCars.CustomerForms
                 CarCard carCard = new CarCard
                 {
                     Title = car.Name + " " + car.Condition,
-                    CarImage = car.Image,
+                    CarImage = Image.FromFile(car.Image),
                     Description = car.Description,
                     Margin = new Padding(20, 10, 0, 15),
                     ViewButtonText = "View",
@@ -58,18 +64,35 @@ namespace ABCCars.CustomerForms
                 // Add the card to the FlowLayoutPanel
                 carCard.ViewButtonClick += (s, e) =>
                 {
-                   
+                    var viewCar = new ViewCarPart(car.id);
+                    viewCar.ShowDialog();
                 };
 
                 // Add the card to the FlowLayoutPanel
                 carCard.BuyButtonClick += (s, e) =>
                 {
-                    
+                    var result = cartModule.UpdatePartID(id, Convert.ToInt32(car.id));
+                    if (!result)
+                    {
+                        MessageBox.Show("Car Part added to cart successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        getCount();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Car Part already in cart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 };
 
                 // Add the card to the FlowLayoutPanel
                 flowLayoutPanel1.Controls.Add(carCard);
             }
+        }
+
+        private void getCount()
+        {
+            var count = cartModule.GetCartCount(id);
+            txtCount.Text = count.ToString();
+
         }
 
         private void serachBox_TextChanged(object sender, EventArgs e)

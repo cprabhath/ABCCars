@@ -2,8 +2,11 @@
 using ABCCars.Validations;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ABCCars.AdminForms.AddNewItem
 {
@@ -45,12 +48,10 @@ namespace ABCCars.AdminForms.AddNewItem
                 cmbCondition.Items.Add(con);
             }
 
-
             txtCarID.Enabled = false;
-            txtQuantitiy.Enabled = false;
+            txtQuantitiy.Enabled = true;
             txtCreatedAt.Enabled = false;
-
-            txtCarID.Text = id;
+            CarPicture.AllowDrop = true;
 
             if (id != null)
             {
@@ -60,17 +61,18 @@ namespace ABCCars.AdminForms.AddNewItem
 
                 if (carLists != null && carLists.Count > 0)
                 {
+                    txtCarID.Text = car.carID;
                     cmbModelList.SelectedItem = car.Name;
                     txtCarModel.Text = car.Model;
                     txtDescription.Text = car.Description;
                     cmbCondition.SelectedItem = car.Condition;
                     txtPrice.Text = car.Price;
                     txtQuantitiy.Text = car.qty;
-                    txtCreatedAt.Text = car.UpdatedAt;
+                    txtCreatedAt.Text = car.CreatedAt;
 
                     if (car.Image != null)
                     {
-                        CarPicture.Image = car.Image;
+                        CarPicture.Image = Image.FromFile(car.Image);
                     }
                     else
                     {
@@ -92,35 +94,83 @@ namespace ABCCars.AdminForms.AddNewItem
         // ======================== Save Car Details ========================
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var CarPicture = new PictureBox();
-            var id = txtCarID.Text;
+            var carID = txtCarID.Text;
+            var name = cmbModelList.Text;
             var model = txtCarModel.Text;
             var description = txtDescription.Text;
             var condition = cmbCondition.Text;
             var price = txtPrice.Text;
-            var quantity = txtQuantitiy.Text;
+            var qty = txtQuantitiy.Text;
 
-            
+            string imagePath = null;
 
-            // Ask for confirmation before saving the changes
+            if (CarPicture.Image != null)
+            {
+                // Define the uploads folder path
+                string uploadsFolder = Application.StartupPath + @"\uploads\cars";
+
+                // Ensure the uploads folder exists
+                if (!System.IO.Directory.Exists(uploadsFolder))
+                {
+                    System.IO.Directory.CreateDirectory(uploadsFolder);
+                }
+
+                // Generate a unique file name with an appropriate extension
+                string extension = ".jpg";  // Default to .jpg or determine based on image format
+                string fileName = Guid.NewGuid().ToString() + extension;  // Unique file name
+                imagePath = System.IO.Path.Combine(uploadsFolder, fileName);
+
+                // Save the image to the new path
+                CarPicture.Image.Save(imagePath, System.Drawing.Imaging.ImageFormat.Jpeg);  // Save as JPEG
+            }
+
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to save the changes?", "Save Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                if (id != null)
+                // Validate the input data
+                var validate = new VehicleValidationValidator();
+                var result = validate.Validate(new VehicleValidation(carID, name, model, description, condition, price, imagePath, qty));
+
+                if (!result.IsValid)
                 {
-                    bool success = Cars.UpdateCar(id, cmbModelList.Text, txtCarModel.Text, CarPicture.Name, txtDescription.Text, cmbCondition.Text, txtPrice.Text, txtQuantitiy.Text);
-                    if (success)
+                    foreach (var failure in result.Errors)
                     {
-                        MessageBox.Show("Car details updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to update car details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(failure.ErrorMessage, utils.ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                 }
+
+                // Update car details in the database
+                var updated = Cars.UpdateCar(id, name, model, imagePath, description, condition, price, qty);
+
+                if (!updated)
+                {
+                    MessageBox.Show("Failed to update the car", utils.ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                MessageBox.Show("Car updated successfully", utils.SuccessTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            // 
+        }
+
+
+        private void CarPicture_DragDrop(object sender, DragEventArgs e)
+        {
+            var data = e.Data.GetData(DataFormats.FileDrop);
+            if (data != null)
+            {
+                var fileNames = data as string[];
+                if (fileNames.Length > 0)
+                {
+                    CarPicture.ImageLocation = fileNames[0];
+                    CarPicture.Name = fileNames[0];
+                }
+            }
+        }
+
+        private void CarPicture_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
         }
     }
 }

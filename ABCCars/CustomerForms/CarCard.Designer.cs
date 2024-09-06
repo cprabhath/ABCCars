@@ -42,10 +42,9 @@
             this.txtDescription.BackColor = System.Drawing.Color.Transparent;
             this.txtDescription.Location = new System.Drawing.Point(13, 267);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(257, 77);
+            this.txtDescription.Size = new System.Drawing.Size(257, 22);
             this.txtDescription.TabIndex = 2;
-            this.txtDescription.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in" +
-    "cididunt ut labore et dolore magna aliqua. ";
+            this.txtDescription.Text = "Lorem ipsum";
             // 
             // btnAddtoCart
             // 
@@ -57,7 +56,7 @@
             this.btnAddtoCart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAddtoCart.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold);
             this.btnAddtoCart.ForeColor = System.Drawing.Color.White;
-            this.btnAddtoCart.Location = new System.Drawing.Point(146, 345);
+            this.btnAddtoCart.Location = new System.Drawing.Point(139, 295);
             this.btnAddtoCart.Name = "btnAddtoCart";
             this.btnAddtoCart.Size = new System.Drawing.Size(112, 44);
             this.btnAddtoCart.TabIndex = 3;
@@ -67,9 +66,9 @@
             // 
             this.txtTitle.AutoSize = true;
             this.txtTitle.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.Location = new System.Drawing.Point(82, 228);
+            this.txtTitle.Location = new System.Drawing.Point(30, 227);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(102, 30);
+            this.txtTitle.Size = new System.Drawing.Size(79, 24);
             this.txtTitle.TabIndex = 4;
             this.txtTitle.Text = "Audi A1";
             // 
@@ -86,7 +85,7 @@
             this.btnView.FillColor = System.Drawing.Color.White;
             this.btnView.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold);
             this.btnView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnView.Location = new System.Drawing.Point(28, 345);
+            this.btnView.Location = new System.Drawing.Point(21, 295);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(112, 44);
             this.btnView.TabIndex = 6;
@@ -104,7 +103,7 @@
             // 
             // CarCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.Controls.Add(this.btnView);
@@ -115,7 +114,7 @@
             this.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.Name = "CarCard";
-            this.Size = new System.Drawing.Size(282, 405);
+            this.Size = new System.Drawing.Size(282, 358);
             ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

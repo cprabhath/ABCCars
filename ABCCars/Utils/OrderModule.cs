@@ -17,7 +17,7 @@ namespace ABCCars.Utils
         {
             try
             {
-                qe.ExecuteNonQuery("INSERT INTO orders (orderID, customerID, partID, vehicleID, total, status, createdAt) VALUES (@partID, @vehicleID, @total, @status, @createdAt)",
+                qe.ExecuteNonQuery("INSERT INTO orders (orderID, customerID, partID, vehicleID, total, status, createdAt) VALUES (@orderID, @customerID ,@partID, @vehicleID, @total, @status, @createdAt)",
                     new SqlParameter("@orderID", orderID),
                     new SqlParameter("@customerID", customerID),
                     new SqlParameter("@partID", partID),
@@ -37,19 +37,14 @@ namespace ABCCars.Utils
         // ========================================================================================================
 
         // ===================================== Update order =================================================
-        public bool UpdateOrder(string orderID, string customerID, string partID, string vehicleID, string total, string status)
+        public bool UpdateOrder(string orderID, string status)
         {
             try
             {
                 return qe.ExecuteNonQuery(
-                "UPDATE orders SET customerID = @customerID ,partID = @partID, vehicleID = @vehicleID, total = @total, status = @status, updatedAt = @updatedAt WHERE orderID = @orderID",
+                "UPDATE orders SET status = @status WHERE orderID = @orderID",
                 new SqlParameter("@orderID", orderID),
-                new SqlParameter("@customerID", customerID),
-                new SqlParameter("@partID", partID),
-                new SqlParameter("@vehicleID", vehicleID),
-                new SqlParameter("@total", total),
-                new SqlParameter("@status", status),
-                new SqlParameter("@updatedAt", DateTime.Now));
+                new SqlParameter("@status", status));
 
             }
             catch (Exception e)
@@ -100,7 +95,6 @@ namespace ABCCars.Utils
                         Total = item["total"].ToString(),
                         Status = item["status"].ToString(),
                         CreatedAt = item["createdAt"].ToString(),
-                        UpdatedAt = item["updatedAt"].ToString()
                     });
                 }
 
@@ -122,7 +116,7 @@ namespace ABCCars.Utils
             try
             {
                 List<OrderList> orderList = new List<OrderList>();
-                var reader = qe.ListAll("SELECT * FROM orders", null);
+                var reader = qe.ListAll("SELECT * FROM orders");
 
                 foreach (var item in reader)
                 {
@@ -135,7 +129,6 @@ namespace ABCCars.Utils
                         Total = item["total"].ToString(),
                         Status = item["status"].ToString(),
                         CreatedAt = item["createdAt"].ToString(),
-                        UpdatedAt = item["updatedAt"].ToString()
                     });
                 }
 
@@ -203,7 +196,6 @@ namespace ABCCars.Utils
                         Total = item["total"].ToString(),
                         Status = item["status"].ToString(),
                         CreatedAt = item["createdAt"].ToString(),
-                        UpdatedAt = item["updatedAt"].ToString()
                     });
                 }
 
@@ -225,6 +217,23 @@ namespace ABCCars.Utils
             try
             {
                 var reader = qe.ListAll("SELECT SUM(total) as total FROM orders", null);
+                return reader[0]["total"].ToString();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+        // ========================================================================================================
+
+        // ================================== Get order count =====================================================
+        public string GetOrderCount()
+        {
+            try
+            {
+                var reader = qe.ListAll("SELECT COUNT(*) as total FROM orders", null);
                 return reader[0]["total"].ToString();
             }
             catch (Exception e)

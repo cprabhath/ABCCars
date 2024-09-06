@@ -4,6 +4,7 @@ using ABCCars.Validations;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -13,9 +14,13 @@ namespace ABCCars.CustomerForms
     {
         utils utils = new utils();
         CarsModule carsModule = new CarsModule();
-        public Cars()
+        CartModule cartModule = new CartModule();
+        public readonly int id;
+
+        public Cars(List<int> _customerID)
         {
             InitializeComponent();
+            id = _customerID[0];
         }
 
         private void Cars_Load(object sender, EventArgs e)
@@ -33,73 +38,11 @@ namespace ABCCars.CustomerForms
         {
             // Clear existing controls in the FlowLayoutPanel
             flowLayoutPanel1.Controls.Clear();
+            getCount();
 
             // get data from the database
             List<CarList> cars = new List<CarList>();
-            cars.Add(new CarList
-            {
-                carID = "1",
-                Name = "Nissan",
-                Model = "E - Vehicle",
-                Description = "Toyota E - E - Vehicle 2023",
-                Condition = "New",
-                Price = "$80000",
-                Image = Properties.Resources.car__1_,
-                CreatedAt = "2024-10-10",
-                UpdatedAt = "2024-10-10"
-            });
-
-            cars.Add(new CarList
-            {
-                carID = "2",
-                Name = "Toyota",
-                Model = "Prius",
-                Description = "Toyota Prius 2021",
-                Condition = "New",
-                Price = "$78000",
-                Image = Properties.Resources.car__2_,
-                CreatedAt = "2021-10-10",
-                UpdatedAt = "2021-10-10"
-            });
-
-            cars.Add(new CarList
-            {
-                carID = "3",
-                Name = "Suzuki",
-                Model = "Swift",
-                Description = "Toyota Swift 2021",
-                Condition = "New",
-                Price = "$24000",
-                Image = Properties.Resources.car__3_,
-                CreatedAt = "2021-10-10",
-                UpdatedAt = "2021-10-10"
-            });
-
-            cars.Add(new CarList
-            {
-                carID = "4",
-                Name = "Honda",
-                Model = "Civic",
-                Description = "Honda Civic 2021",
-                Condition = "New",
-                Price = "$44000",
-                Image = Properties.Resources.car__4_,
-                CreatedAt = "2021-10-10",
-                UpdatedAt = "2021-10-10"
-            });
-
-            cars.Add(new CarList
-            {
-                carID = "5",
-                Name = "Toyoto",
-                Model = "CHR",
-                Description = "Honda CHR 2021",
-                Condition = "New",
-                Price = "$54000",
-                Image = Properties.Resources.car__8_,
-                CreatedAt = "2021-10-10",
-                UpdatedAt = "2021-10-10"
-            });
+            cars = carsModule.GetCars();
 
             // Perform search filtering
             var filteredCars = cars
@@ -118,7 +61,7 @@ namespace ABCCars.CustomerForms
                 CarCard carCard = new CarCard
                 {
                     Title = car.Name + " " + car.Model,
-                    CarImage = car.Image,
+                    CarImage = Image.FromFile(car.Image),
                     Description = car.Description,
                     Margin = new Padding(20, 10, 0, 15),
                     ViewButtonText = "View",
@@ -127,17 +70,40 @@ namespace ABCCars.CustomerForms
 
                 carCard.ViewButtonClick += (s, e) =>
                 {
-                    
+                    var carView = new ViewCar(car.carID);
+                    carView.ShowDialog();
                 };
 
                 carCard.BuyButtonClick += (s, e) =>
                 {
-                   
+                    var updateCart = cartModule.UpdateVehicleID(id, Convert.ToInt32(car.carID));
+                    if (updateCart)
+                    {
+                        MessageBox.Show("Car added to cart successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        getCount();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Car already in cart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 };
 
                 // Add the card to the FlowLayoutPanel
                 flowLayoutPanel1.Controls.Add(carCard);
             }
+        }
+
+        private void getCount()
+        {
+            var count = cartModule.GetCartCount(id);
+            txtCount.Text = count.ToString();
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var cart = new Cart(id);
+            cart.ShowDialog();
         }
     }
 }

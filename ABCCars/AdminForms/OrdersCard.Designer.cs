@@ -46,9 +46,10 @@
             this.btnBuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnBuy.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold);
             this.btnBuy.ForeColor = System.Drawing.Color.White;
-            this.btnBuy.Location = new System.Drawing.Point(146, 211);
+            this.btnBuy.Location = new System.Drawing.Point(176, 172);
+            this.btnBuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuy.Name = "btnBuy";
-            this.btnBuy.Size = new System.Drawing.Size(110, 45);
+            this.btnBuy.Size = new System.Drawing.Size(142, 36);
             this.btnBuy.TabIndex = 11;
             this.btnBuy.Text = "Buy";
             // 
@@ -63,9 +64,10 @@
             this.btnView.FillColor = System.Drawing.Color.White;
             this.btnView.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold);
             this.btnView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnView.Location = new System.Drawing.Point(42, 211);
+            this.btnView.Location = new System.Drawing.Point(34, 172);
+            this.btnView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(98, 45);
+            this.btnView.Size = new System.Drawing.Size(137, 36);
             this.btnView.TabIndex = 10;
             this.btnView.Text = "View";
             // 
@@ -73,9 +75,10 @@
             // 
             this.titleLable.AutoSize = true;
             this.titleLable.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLable.Location = new System.Drawing.Point(66, 33);
+            this.titleLable.Location = new System.Drawing.Point(53, 26);
+            this.titleLable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.titleLable.Name = "titleLable";
-            this.titleLable.Size = new System.Drawing.Size(92, 30);
+            this.titleLable.Size = new System.Drawing.Size(74, 24);
             this.titleLable.TabIndex = 9;
             this.titleLable.Text = "ORDER";
             // 
@@ -83,9 +86,10 @@
             // 
             this.orderPrice.AutoSize = true;
             this.orderPrice.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderPrice.Location = new System.Drawing.Point(93, 166);
+            this.orderPrice.Location = new System.Drawing.Point(74, 133);
+            this.orderPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.orderPrice.Name = "orderPrice";
-            this.orderPrice.Size = new System.Drawing.Size(124, 30);
+            this.orderPrice.Size = new System.Drawing.Size(98, 24);
             this.orderPrice.TabIndex = 12;
             this.orderPrice.Text = "120,00.00";
             // 
@@ -93,9 +97,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 166);
+            this.label2.Location = new System.Drawing.Point(48, 133);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 30);
+            this.label2.Size = new System.Drawing.Size(21, 24);
             this.label2.TabIndex = 13;
             this.label2.Text = "$";
             // 
@@ -103,9 +108,10 @@
             // 
             this.orderID.AutoSize = true;
             this.orderID.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderID.Location = new System.Drawing.Point(159, 33);
+            this.orderID.Location = new System.Drawing.Point(127, 26);
+            this.orderID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.orderID.Name = "orderID";
-            this.orderID.Size = new System.Drawing.Size(69, 30);
+            this.orderID.Size = new System.Drawing.Size(54, 24);
             this.orderID.TabIndex = 14;
             this.orderID.Text = "0001";
             // 
@@ -113,9 +119,10 @@
             // 
             this.orderDescription.AutoSize = true;
             this.orderDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderDescription.Location = new System.Drawing.Point(15, 78);
+            this.orderDescription.Location = new System.Drawing.Point(12, 62);
+            this.orderDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.orderDescription.Name = "orderDescription";
-            this.orderDescription.Size = new System.Drawing.Size(64, 25);
+            this.orderDescription.Size = new System.Drawing.Size(51, 20);
             this.orderDescription.TabIndex = 15;
             this.orderDescription.Text = "label1";
             // 
@@ -123,16 +130,17 @@
             // 
             this.orderStatus.AutoSize = true;
             this.orderStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderStatus.Location = new System.Drawing.Point(15, 117);
+            this.orderStatus.Location = new System.Drawing.Point(12, 94);
+            this.orderStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.orderStatus.Name = "orderStatus";
-            this.orderStatus.Size = new System.Drawing.Size(64, 25);
+            this.orderStatus.Size = new System.Drawing.Size(51, 20);
             this.orderStatus.TabIndex = 16;
             this.orderStatus.Text = "label1";
             // 
             // OrdersCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.orderStatus);
             this.Controls.Add(this.orderDescription);
@@ -142,8 +150,9 @@
             this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.titleLable);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "OrdersCard";
-            this.Size = new System.Drawing.Size(293, 290);
+            this.Size = new System.Drawing.Size(359, 232);
             this.ResumeLayout(false);
             this.PerformLayout();
 

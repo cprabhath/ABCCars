@@ -2,6 +2,7 @@
 using ABCCars.CustomerForms;
 using ABCCars.Utils;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -22,22 +23,10 @@ namespace ABCCars.AdminForms
 
         public void LoadCarParts(string searchQuery = "")
         {
+            flowLayoutPanel1.Controls.Clear();
             // get all car parts
             List<CarPartsList> carPartsLists = new List<CarPartsList>();
-            carPartsLists.Add
-                (
-                new CarPartsList
-                {
-                    id = "1",
-                    Name = "Rim",
-                    Description = "Rim for Toyota",
-                    Condition = "New",
-                    Price = "$800",
-                    Image = Properties.Resources.car__1_,
-                    CreatedAt = "2024-10-10",
-                    UpdatedAt = "2024-10-10"
-                }
-            );
+            carPartsLists = carPartsModule.GetAllCarParts();
 
             // Combine checks for no cars found or no search results
             if (carPartsLists == null || carPartsLists.Count == 0)
@@ -49,20 +38,21 @@ namespace ABCCars.AdminForms
             // Perform search filtering
             var filteredCars = carPartsLists
                 .Where(c =>
-                    c.Name.ToLower().Contains(searchQuery) ||
-                    c.Condition.ToLower().Contains(searchQuery))
+                    c.Name.ToLower().Contains(searchQuery))
                 .ToList();
 
             // Display message if no cars match the search query
             if (filteredCars.Count == 0)
             {
                 txtPartManage.Text = "No car parts found";
+                txtPartManage.ForeColor = Color.Red;
                 return;
             }
             else
             {
                 // Reset title if cars are found
                 txtPartManage.Text = "Available Car Parts";
+                txtPartManage.ForeColor = Color.Black;
             }
 
             // Display car parts
@@ -70,7 +60,7 @@ namespace ABCCars.AdminForms
             {
                 CarPartCard carPartCard = new CarPartCard();
                 carPartCard.Title = carPart.Name;
-                carPartCard.CarImage = carPart.Image;
+                carPartCard.CarImage = Image.FromFile(carPart.Image);
                 carPartCard.Margin = new Padding(20, 0, 0, 15);
                 carPartCard.ViewButtonText = "View";
                 carPartCard.BuyButtonText = "Delete";
@@ -88,7 +78,7 @@ namespace ABCCars.AdminForms
                         if (result)
                         {
                             MessageBox.Show("Car deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadCarParts(); // Refresh the car list after deletion
+                            LoadCarParts(); 
                         }
                         else
                         {
@@ -103,7 +93,13 @@ namespace ABCCars.AdminForms
         private void searchBox_TextChanged(object sender, System.EventArgs e)
         {
             string searchQuery = searchBox.Text.Trim().ToLower();
-            LoadCarParts(searchQuery); // Pass the selected sort option
+            LoadCarParts(searchQuery);
+        }
+
+        private void btnCarAdd_Click(object sender, System.EventArgs e)
+        {
+            var addCarPart = new AddNewParts();
+            addCarPart.ShowDialog();
         }
     }
 }

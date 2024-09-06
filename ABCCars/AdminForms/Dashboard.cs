@@ -11,6 +11,7 @@ namespace ABCCars.AdminForms
     {
         DBConnection db = new DBConnection();
         OrderModule order = new OrderModule();
+        OrderManage orderManage = new OrderManage();
 
         public Dashboard()
         {
@@ -19,13 +20,23 @@ namespace ABCCars.AdminForms
 
         private void Dashboard_Load(object sender, System.EventArgs e)
         {
+
+
             // Get the total number of customers and orders
             List<OrderList> Pending = new List<OrderList>();
+            List<CustomersList> customersLists = new List<CustomersList>();
+
+            Pending = order.GetOrderByStatus("Pending");
+            customersLists = db.customersLists();
+
+
+            orderCount.Text = Pending.Count.ToString();
+            cusCount.Text = customersLists.Count.ToString();
            
 
             // Convert the text to integer values
-            int totalCustomers = int.Parse(cusCount.Text);
-            int totalOrders = int.Parse(orderCount.Text);
+            int totalCustomers = Convert.ToInt32(cusCount.Text);
+            int totalOrders = Convert.ToInt32(orderCount.Text);
 
             // Start the counter animations
             AnimateCounter(cusCount, totalCustomers, 5);

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using ABCCars.Utils;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ABCCars.CustomerForms
@@ -7,23 +10,26 @@ namespace ABCCars.CustomerForms
     public partial class ClientLayout : Form
     {
         Color activeColor = Color.FromArgb(146, 183, 255);
-
-
+        DBConnection db = new DBConnection();
+        public List<CustomersList> customersLists = new List<CustomersList>();
         public ClientLayout(string _username)
         {
             InitializeComponent();
             txtUsername.Text = _username;
+
+            customersLists = db.GetCustomerByEmail(_username);
         }
 
         private void btnCarManage_Click(object sender, EventArgs e)
         {
             ResetButtonColors();
             btnCarManage.FillColor = activeColor;
+            List<int> customerID = customersLists.Select(c => c.Id).ToList();
 
             Panel panel = this.Load_Panel as Panel;
             if (panel != null)
             {
-                Cars dashboard = new Cars();
+                Cars dashboard = new Cars(customerID);
                 dashboard.TopLevel = false;
                 dashboard.FormBorderStyle = FormBorderStyle.None;
                 dashboard.Dock = DockStyle.Fill;
@@ -37,11 +43,12 @@ namespace ABCCars.CustomerForms
         {
             ResetButtonColors();
             btnCarPartManage.FillColor = activeColor;
+            List<int> customerID = customersLists.Select(c => c.Id).ToList();
 
             Panel panel = this.Load_Panel as Panel;
             if (panel != null)
             {
-                CarParts carParts = new CarParts();
+                CarParts carParts = new CarParts(customerID);
                 carParts.TopLevel = false;
                 carParts.FormBorderStyle = FormBorderStyle.None;
                 carParts.Dock = DockStyle.Fill;
@@ -94,11 +101,15 @@ namespace ABCCars.CustomerForms
             
             ResetButtonColors();
             btnCarManage.FillColor = activeColor;
+            List<int> customerID = customersLists.Select(c => c.Id).ToList();
+
+            CartModule cartModule = new CartModule();
+            cartModule.CreateCart(customerID[0]);
 
             Panel panel = this.Load_Panel as Panel;
             if (panel != null)
             {
-                Cars dashboard = new Cars();
+                Cars dashboard = new Cars(customerID);
                 dashboard.TopLevel = false;
                 dashboard.FormBorderStyle = FormBorderStyle.None;
                 dashboard.Dock = DockStyle.Fill;

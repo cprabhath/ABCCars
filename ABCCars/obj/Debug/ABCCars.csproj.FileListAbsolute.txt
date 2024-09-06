@@ -68,6 +68,7 @@ E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.AdminForms.AddNewItem.AddNewParts.
 E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.AdminForms.AddNewItem.CarEdit.resources
 E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.AdminForms.AddNewItem.CarPartEdit.resources
 E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.AdminForms.AddNewItem.CustomerEdit.resources
+E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.AdminForms.AddNewItem.ViewOrders.resources
 E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.AdminLayout.resources
 E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.AdminForms.CarCard.resources
 E:\Projects\ABCCars\ABCCars\obj\Debug\ABCCars.AdminForms.CarManage.resources

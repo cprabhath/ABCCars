@@ -1,4 +1,6 @@
 ﻿using ABCCars.Utils;
+using ABCCars.Validations;
+using FluentValidation.Validators;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -8,6 +10,7 @@ namespace ABCCars.AdminForms.AddNewItem
     public partial class AddNewCar : Form
     {
         CarsModule cars = new CarsModule();
+        utils utils = new utils();
 
         public AddNewCar()
         {
@@ -36,21 +39,60 @@ namespace ABCCars.AdminForms.AddNewItem
         // ================================= Save Car =================================
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to save this car?", "Save Car", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
+            var carID = txtCarID.Text;
+            var name = cmbModelList.Text;
+            var model = txtCarModel.Text;
+            var description = txtDescription.Text;
+            var condition = cmbCondition.Text;
+            var price = txtPrice.Text;
+            var qty = txtQuantitiy.Text;
+
+            // ======================  Image processing ========================
+            var image = CarPicture.Image;
+            string imagePath = "";
+
+            if (image != null)
             {
-                bool result = cars.AddCar(txtCarID.Text, cmbModelList.Text, txtQuantitiy.Text, txtCarModel.Text, CarPicture.Name, txtDescription.Text, cmbCondition.Text, txtPrice.Text);
-                if (result)
+                // ===================== Define the uploads folder path =====================
+                string uploadsFolder = Application.StartupPath + @"\uploads\cars";
+
+                // ================ Check if the folder exists, if not, create it ==============
+                if (!System.IO.Directory.Exists(uploadsFolder))
                 {
-                    MessageBox.Show("Car added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
+                    System.IO.Directory.CreateDirectory(uploadsFolder);
                 }
-                else
+
+                //=============== Generate a unique file name =========================
+                string fileName = System.IO.Path.GetFileName(CarPicture.Name);
+                imagePath = System.IO.Path.Combine(uploadsFolder, fileName);
+
+                CarPicture.Image.Save(imagePath);
+            }
+
+            var validate = new VehicleValidationValidator();
+            var result = validate.Validate(new VehicleValidation(carID, name, model, description, condition, price, imagePath, qty));
+
+            if (!result.IsValid)
+            {
+                foreach (var failure in result.Errors)
                 {
-                    MessageBox.Show("Failed to add car", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(failure.ErrorMessage, utils.ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
+
+            var added = cars.AddCar(carID, name, model, qty, imagePath, description, condition, price);
+
+            if (!added)
+            {
+                MessageBox.Show("Failed to add the car", utils.ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show("Car added successfully", utils.SuccessTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Clear();
         }
+
         // =============================================================================
 
         private void AddNewCar_Load(object sender, EventArgs e)
@@ -73,20 +115,57 @@ namespace ABCCars.AdminForms.AddNewItem
 
 
             txtCarID.Enabled = false;
-            txtQuantitiy.Enabled = false;
             txtCreatedAt.Enabled = false;
+            txtQuantitiy.Enabled = true;
 
             CarPicture.AllowDrop = true;
 
-            // ====== auto generated ID =======
-            var id = "";
-           for (int i = 0; i < 1000; i++)
+            genID();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void genID()
+        {
+            string lastCarID = cars.GetLastID();
+
+            int newIDNumber = 0;
+
+            if (!string.IsNullOrEmpty(lastCarID) && lastCarID.Length > 4)
             {
-                id = "CAR " + i.ToString().PadLeft(3, '0');
+                string numericPart = lastCarID.Substring(4);
+                newIDNumber = int.Parse(numericPart) + 1;
+            }
+            else
+            {
+                newIDNumber = 1;
             }
 
-           txtCarID.Text = id;
-            // =================================
+            string newCarID = "CAR " + newIDNumber.ToString().PadLeft(3, '0');
+
+            txtCarID.Text = newCarID;
+        }
+
+        private void Clear()
+        {
+            genID();
+            cmbModelList.Text = "";
+            txtQuantitiy.Text = "";
+            txtCarModel.Text = "";
+            CarPicture.Image = null;
+            CarPicture.Name = "";
+            txtDescription.Text = "";
+            cmbCondition.Text = "";
+            txtPrice.Text = "";
+            txtCreatedAt.Text = "";
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

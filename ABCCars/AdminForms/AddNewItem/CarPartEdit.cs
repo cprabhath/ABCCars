@@ -1,14 +1,8 @@
-﻿using ABCCars.CustomerForms;
-using ABCCars.Utils;
+﻿using ABCCars.Utils;
 using ABCCars.Validations;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ABCCars.AdminForms.AddNewItem
@@ -25,16 +19,14 @@ namespace ABCCars.AdminForms.AddNewItem
 
         private void CarPartEdit_Load(object sender, EventArgs e)
         {
-            // Car part types
-            var carParts = new List<string> { "Rim", "Tyre", "Engine", "Battery", "Brake", "Suspension", "Steering", "Transmission", "Exhaust", "Interior", "Exterior" };
-            
+            var carBrands = new List<string> { "Abarth", "AC", "Acura", "Aixam", "Alfa Romeo", "Ariel", "Arrinera", "Aston Martin", "Audi", "Bentley", "BMW", "Bugatti", "Buick", "Cadillac", "Caterham", "Chevrolet", "Chrysler", "Citroën", "Corvette", "Dacia", "Daf", "Daihatsu", "Dodge", "DR Motor", "Elfin", "Ferrari", "Fiat", "Ford", "Gaz", "Geely", "Gillet", "Ginetta", "General Motors", "GMC", "Great Wall", "Gumpert", "Hennessey", "Holden", "Honda", "Hummer", "Hyundai", "Infiniti", "Isuzu", "Jaguar", "Jeep", "Joss", "Kia", "Koenigsegg", "Lada", "Lamborghini", "Lancia", "Land Rover", "Lexus", "Lincoln", "Lotus", "Luxgen", "Mahindra", "Maruti Suzuki", "Maserati", "Maybach", "Mazda", "Mclaren", "Mercedes", "MG", "Mini", "Mitsubishi", "Morgan Motor", "Mustang", "Nissan", "Noble", "Opel", "Pagani", "Panoz", "Perodua", "Peugeot", "Piaggio", "Pininfarina", "Porsche", "Proton", "Renault", "Reva", "Rimac", "Rolls Royce", "Ruf", "Saab", "Scania", "Scion", "Seat", "Shelby", "Skoda", "Smart", "Spyker", "Ssangyong", "SSC", "Subaru", "Suzuki", "Tata", "Tatra", "Tesla", "Toyota", "Tramontana", "Troller", "TVR", "UAZ", "Vandenbrink", "Vauxhall", "Vector Motors", "Venturi", "Volkswagen", "Volvo", "Wiesmann", "Zagato", "Zaz", "Zil" };
             var condition = new List<string> { "New", "Used" };
+            var partCategory = new List<string> { "Engine", "Transmission", "Suspension", "Brakes", "Exhaust", "Interior", "Exterior", "Wheels", "Tires", "Lighting", "Electrical", "Miscellaneous" };
 
             // Iterate over each car brand in the list
-            foreach (var car in carParts)
+            foreach (var car in carBrands)
             {
-                // Add the car brand to the ComboBox (or any other list control)
-                cmbModelList.Items.Add(car);
+                cmdCarName.Items.Add(car);
             }
 
             foreach (var con in condition)
@@ -42,46 +34,39 @@ namespace ABCCars.AdminForms.AddNewItem
                 cmbCondition.Items.Add(con);
             }
 
+            foreach (var part in partCategory)
+            {
+                cmbModelList.Items.Add(part);
+            }
 
-            txtPartID.Enabled = false;
-            txtQuantitiy.Enabled = false;
+
+            txtCarPartID.Enabled = false;
             txtCreatedAt.Enabled = false;
-
-            txtPartID.Text = id;
+            CarPartPicture.AllowDrop = true;
 
             if (id != null)
             {
                 List<CarPartsList> carPartsLists = new List<CarPartsList>();
-                carPartsLists.Add
-                (
-                new CarPartsList
-                {
-                    id = "1",
-                    Name = "Rim",
-                    Description = "Rim for Toyota",
-                    Condition = "New",
-                    Price = "$800",
-                    Image = Properties.Resources.part__1_,
-                    CreatedAt = "2024-10-10",
-                    UpdatedAt = "2024-10-10"
-                }
-            );
+                carPartsLists = partsModule.GetCarPartsById(id);
 
                 CarPartsList carPart = carPartsLists[0];
 
                 if (carPart != null)
                 {
-                    cmbModelList.SelectedItem = carPart.Name;
-                    CarPartName.Text = carPart.Name;
+                    var parts = carPart.Name.Split(' ');
+
+                    txtCarPartID.Text = carPart.id;
+                    cmdCarName.SelectedItem = parts[0];
+                    cmbModelList.SelectedItem = parts[1];
                     txtDescription.Text = carPart.Description;
                     cmbCondition.SelectedItem = carPart.Condition;
                     txtPrice.Text = carPart.Price;
                     txtQuantitiy.Text = carPart.qty;
-                    txtCreatedAt.Text = carPart.UpdatedAt;
+                    txtCreatedAt.Text = carPart.CreatedAt;
 
                     if (carPart.Image != null)
                     {
-                        CarPartPicture.Image = carPart.Image;
+                        CarPartPicture.Image = Image.FromFile(carPart.Image);
                     }
                     else
                     {
@@ -98,32 +83,62 @@ namespace ABCCars.AdminForms.AddNewItem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var CarPicture = new PictureBox();
-            var id = txtPartID.Text;
-            var name = CarPartName.Text;
+            var carID = txtCarPartID.Text;
+            var name = cmdCarName.Text + " " + cmbModelList.Text;
             var description = txtDescription.Text;
             var condition = cmbCondition.Text;
             var price = txtPrice.Text;
             var quantity = txtQuantitiy.Text;
 
-            
+            string imagePath = null;
+
+            if (CarPartPicture.Image != null)
+            {
+                // Define the uploads folder path
+                string uploadsFolder = Application.StartupPath + @"\uploads\cars";
+
+                // Ensure the uploads folder exists
+                if (!System.IO.Directory.Exists(uploadsFolder))
+                {
+                    System.IO.Directory.CreateDirectory(uploadsFolder);
+                }
+
+                // Generate a unique file name with an appropriate extension
+                string extension = ".jpg";  // Default to .jpg or determine based on image format
+                string fileName = Guid.NewGuid().ToString() + extension;  // Unique file name
+                imagePath = System.IO.Path.Combine(uploadsFolder, fileName);
+
+                // Save the image to the new path
+                CarPartPicture.Image.Save(imagePath, System.Drawing.Imaging.ImageFormat.Jpeg);  // Save as JPEG
+            }
+
+            // ====================== Validate ========================
+            var validate = new VehiclePartValidationValidator();
+            var result = validate.Validate(new VehiclePartValidation(id, imagePath, name, description, condition, price, quantity));
+
+            if (!result.IsValid)
+            {
+                foreach (var failure in result.Errors)
+                {
+                    MessageBox.Show(failure.ErrorMessage, utils.ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
 
             // Ask for confirmation before saving the changes
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to save the changes?", "Save Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                if (id != null)
+                var updated = partsModule.UpdateCarParts(id, name, imagePath, description, condition, price, quantity, carID);
+
+                if (!updated)
                 {
-                    bool success = partsModule.UpdateCarParts(id, name, description, condition, price, quantity, CarPartPicture.Name);
-                    if (success)
-                    {
-                        MessageBox.Show("Car part details updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to update car part details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("Failed to update the car part", utils.ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Car part updated successfully", utils.SuccessTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -150,6 +165,26 @@ namespace ABCCars.AdminForms.AddNewItem
         private void CarPartPicture_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Copy;
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void Clear()
+        {
+            cmdCarName.SelectedIndex = 0;
+            txtPrice.Text = "";
+            txtQuantitiy.Text = "";
+            txtDescription.Text = "";
+            cmbCondition.SelectedIndex = 0;
+            cmbModelList.SelectedIndex = 0;
         }
     }
 }

@@ -136,47 +136,6 @@ namespace ABCCars
         }
         // =======================================================================================
 
-        // ========================= Execute a table statement ===================================
-        public DataTable TableExecutor(string query, params SqlParameter[] parameters)
-        {
-            // ================== Create a new DataTable ==================
-            DataTable dataTable = new DataTable();
-
-            try
-            {
-                // ================== Create a connection to the database ==================
-                using (SqlConnection connection = new SqlConnection(cs.connectionString))
-                {
-                    // ================== Open the connection ==================
-                    connection.Open();
-                    // ================== Create a command to execute the query ==================
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        // ================== Add the parameters to the command ==================
-                        if (parameters != null)
-                        {
-                            command.Parameters.AddRange(parameters);
-                        }
-                        // ================== Execute the query and load the data into the DataTable ==================
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            dataTable.Load(reader);
-                        }
-                    }
-                }
-            }
-            // ================== Catch any exceptions and return the DataTable ==================
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            // ================== Return the DataTable ==================
-            return dataTable;
-        }
-        // =======================================================================================
-
-
         // ============================== Query without parameters ===============================
         public List<string> GetList(string query)
         {
@@ -253,6 +212,29 @@ namespace ABCCars
             return list;
         }
 
+        public T ExecuteScalar<T>(string query, params SqlParameter[] parameters)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(cs.connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        if (parameters != null)
+                        {
+                            command.Parameters.AddRange(parameters);
+                        }
+                        return (T)command.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return default(T);
+            }
+        }
 
     }
 }

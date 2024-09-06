@@ -27,31 +27,37 @@ namespace ABCCars.CustomerForms
             var customer = db.GetCustomerByEmail(username);
             if (customer != null)
             {
-                customersList = customer;
+                customersList = customer[0];
                 txtFullName.Text = customersList.Name;
                 txtAddress.Text = customersList.Email;
                 txtMobileNumber.Text = customersList.Phone;
-                txtAddress.Text = customersList.Address;
+                txtHomeAddress.Text = customersList.Address;
             }
 
-            Pending = orderModule.GetOrderByStatus("Pending");
-            Completed = orderModule.GetOrderByStatus("Completed");
-            Processing = orderModule.GetOrderByStatus("Processing");
-
-
-            if(Pending.Count > 0)
+            try
             {
-                txtPending.Text = Pending.Count.ToString();
-            }
+                Pending = orderModule.GetOrderByStatus("Pending");
+                Completed = orderModule.GetOrderByStatus("Completed");
+                Processing = orderModule.GetOrderByStatus("Processing");
 
-            if (Completed.Count > 0)
-            {
-                txtCompleted.Text = Completed.Count.ToString();
-            }
 
-            if (Processing.Count > 0)
+                if (Pending != null && Pending.Count > 0)
+                {
+                    txtPending.Text = Pending.Count.ToString();
+                }
+
+                if (Completed.Count > 0)
+                {
+                    txtCompleted.Text = Completed.Count.ToString();
+                }
+
+                if (Processing.Count > 0)
+                {
+                    txtProcessing.Text = Processing.Count.ToString();
+                }
+            }catch(Exception ex)
             {
-                txtProcessing.Text = Processing.Count.ToString();
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

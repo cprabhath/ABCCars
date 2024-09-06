@@ -137,6 +137,7 @@ namespace ABCCars.Auth
         // ======================== Password Update Button ===============================
         private void btnPasswordUpdate_Click(object sender, EventArgs e)
         {
+            var username = txtUsername.Text;
             var newPassword = txtNewPassword.Text;
             var confirmPassword = txtConfirmPassword.Text;
 
@@ -156,7 +157,7 @@ namespace ABCCars.Auth
             else
             {
                 // ======================== Update the password in the database ========================
-                var success = db.ChangeCustomerPassword(newPassword, txtUsername.Text);
+                var success = db.ChangeCustomerPassword(username, newPassword);
 
                 if (success)
                 {

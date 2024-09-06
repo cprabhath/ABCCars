@@ -79,5 +79,15 @@ namespace ABCCars.CustomerForms
         }
 
         #endregion
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddtoCart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

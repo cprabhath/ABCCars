@@ -15,6 +15,10 @@ namespace ABCCars.AdminForms
     public partial class OrderManage : Form
     {
         OrderModule orderModule = new OrderModule();
+        CarsModule carsModule = new CarsModule();
+        CarPartsModule partsModule = new CarPartsModule();
+        DBConnection connection = new DBConnection();
+
         public OrderManage()
         {
             InitializeComponent();
@@ -22,11 +26,12 @@ namespace ABCCars.AdminForms
 
         private void OrderManage_Load(object sender, EventArgs e)
         {
-            
+            LoadOrders();
         }
 
         public void LoadOrders(string searchQuery = "")
         {
+            flowLayoutPanel1.Controls.Clear();
             List<OrderList> orderManages = new List<OrderList>();
             orderManages = orderModule.GetAllOrders();
 
@@ -53,9 +58,12 @@ namespace ABCCars.AdminForms
 
             foreach (var order in orderManages)
             {
+                var carName = carsModule.GetCarById(order.VehicleID);
+                var CarPart = partsModule.GetCarPartsById(order.PartID);
+
                 OrdersCard orderCard = new OrdersCard();
                 orderCard.Title = order.OrderID;
-                orderCard.Description = order.PartID + " Vehicle parts, " + order.VehicleID + " Vehicles";
+                orderCard.Description = carName[0].Name + " Vehicles, and " + CarPart[0].Name + " Parts";
                 orderCard.OrderStatus = order.Status;
                 orderCard.Price = order.Total;
                 orderCard.Margin = new Padding(20, 0, 0, 15);
@@ -70,12 +78,27 @@ namespace ABCCars.AdminForms
                 }
                 orderCard.ViewButtonClick += (s, ev) =>
                 {
-                    
+                    var viewOrder = new ViewOrders(order.OrderID);
+                    viewOrder.ShowDialog();
                 };
                 orderCard.BuyButtonClick += (s, ev) =>
                 {
-                    
-
+                    var acccept = MessageBox.Show("Are you sure you want to approve this order?", "Approve Order", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (acccept == DialogResult.Yes)
+                    {
+                        var result = orderModule.UpdateOrder(order.OrderID, "Approved");
+                        var Email = connection.GetCustomerById(Convert.ToInt32(order.CustomerID));
+                        if (result && Email != null)
+                        {
+                            OrderApproveMail orderApprove = new OrderApproveMail();
+                            orderApprove.SendOrderApproveMail(Email[0].Email);
+                            LoadOrders(searchQuery);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Order approval failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 };
                 flowLayoutPanel1.Controls.Add(orderCard);
             }

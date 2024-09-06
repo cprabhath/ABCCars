@@ -76,9 +76,10 @@
             this.btnClear.FillColor = System.Drawing.Color.White;
             this.btnClear.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnClear.Location = new System.Drawing.Point(406, 591);
+            this.btnClear.Location = new System.Drawing.Point(304, 480);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(303, 45);
+            this.btnClear.Size = new System.Drawing.Size(227, 37);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
             // 
@@ -97,14 +98,14 @@
             this.txtCreatedAt.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.txtCreatedAt.ForeColor = System.Drawing.Color.Black;
             this.txtCreatedAt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCreatedAt.Location = new System.Drawing.Point(687, 494);
-            this.txtCreatedAt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCreatedAt.Location = new System.Drawing.Point(515, 401);
+            this.txtCreatedAt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtCreatedAt.Name = "txtCreatedAt";
             this.txtCreatedAt.PasswordChar = '\0';
             this.txtCreatedAt.PlaceholderText = "";
             this.txtCreatedAt.ReadOnly = true;
             this.txtCreatedAt.SelectedText = "";
-            this.txtCreatedAt.Size = new System.Drawing.Size(331, 48);
+            this.txtCreatedAt.Size = new System.Drawing.Size(248, 39);
             this.txtCreatedAt.TabIndex = 8;
             // 
             // label14
@@ -112,9 +113,10 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Roboto", 12F);
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(666, 507);
+            this.label14.Location = new System.Drawing.Point(500, 412);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(15, 24);
+            this.label14.Size = new System.Drawing.Size(13, 20);
             this.label14.TabIndex = 23;
             this.label14.Text = ":";
             // 
@@ -122,9 +124,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(483, 16);
+            this.label1.Location = new System.Drawing.Point(362, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 30);
+            this.label1.Size = new System.Drawing.Size(110, 25);
             this.label1.TabIndex = 11;
             this.label1.Text = "Car Details";
             // 
@@ -159,9 +162,10 @@
             this.guna2GroupBox1.Controls.Add(this.CarPicture);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(12, 63);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(9, 51);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(1043, 661);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(782, 537);
             this.guna2GroupBox1.TabIndex = 10;
             this.guna2GroupBox1.Text = "Detail View of the Car";
             // 
@@ -176,9 +180,10 @@
             this.cmbCondition.Font = new System.Drawing.Font("Roboto", 12F);
             this.cmbCondition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbCondition.ItemHeight = 30;
-            this.cmbCondition.Location = new System.Drawing.Point(480, 247);
+            this.cmbCondition.Location = new System.Drawing.Point(360, 201);
+            this.cmbCondition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbCondition.Name = "cmbCondition";
-            this.cmbCondition.Size = new System.Drawing.Size(538, 36);
+            this.cmbCondition.Size = new System.Drawing.Size(404, 36);
             this.cmbCondition.TabIndex = 4;
             // 
             // cmbModelList
@@ -192,9 +197,10 @@
             this.cmbModelList.Font = new System.Drawing.Font("Roboto", 12F);
             this.cmbModelList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbModelList.ItemHeight = 30;
-            this.cmbModelList.Location = new System.Drawing.Point(480, 126);
+            this.cmbModelList.Location = new System.Drawing.Point(360, 102);
+            this.cmbModelList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbModelList.Name = "cmbModelList";
-            this.cmbModelList.Size = new System.Drawing.Size(538, 36);
+            this.cmbModelList.Size = new System.Drawing.Size(404, 36);
             this.cmbModelList.TabIndex = 2;
             // 
             // label17
@@ -202,9 +208,10 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Roboto", 12F);
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(447, 312);
+            this.label17.Location = new System.Drawing.Point(335, 254);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(15, 24);
+            this.label17.Size = new System.Drawing.Size(13, 20);
             this.label17.TabIndex = 28;
             this.label17.Text = ":";
             // 
@@ -222,13 +229,13 @@
             this.txtPrice.Font = new System.Drawing.Font("Roboto", 12F);
             this.txtPrice.ForeColor = System.Drawing.Color.Black;
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.Location = new System.Drawing.Point(480, 304);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPrice.Location = new System.Drawing.Point(360, 247);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "";
             this.txtPrice.SelectedText = "";
-            this.txtPrice.Size = new System.Drawing.Size(538, 48);
+            this.txtPrice.Size = new System.Drawing.Size(404, 39);
             this.txtPrice.TabIndex = 5;
             // 
             // label16
@@ -236,9 +243,10 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Roboto", 12F);
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(268, 311);
+            this.label16.Location = new System.Drawing.Point(201, 253);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(56, 24);
+            this.label16.Size = new System.Drawing.Size(44, 20);
             this.label16.TabIndex = 26;
             this.label16.Text = "Price";
             // 
@@ -247,9 +255,10 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Roboto", 12F);
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(554, 507);
+            this.label15.Location = new System.Drawing.Point(416, 412);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(106, 24);
+            this.label15.Size = new System.Drawing.Size(82, 20);
             this.label15.TabIndex = 22;
             this.label15.Text = "Created At";
             // 
@@ -268,14 +277,14 @@
             this.txtQuantitiy.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.txtQuantitiy.ForeColor = System.Drawing.Color.Black;
             this.txtQuantitiy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtQuantitiy.Location = new System.Drawing.Point(160, 494);
-            this.txtQuantitiy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtQuantitiy.Location = new System.Drawing.Point(120, 401);
+            this.txtQuantitiy.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtQuantitiy.Name = "txtQuantitiy";
             this.txtQuantitiy.PasswordChar = '\0';
             this.txtQuantitiy.PlaceholderText = "";
             this.txtQuantitiy.ReadOnly = true;
             this.txtQuantitiy.SelectedText = "";
-            this.txtQuantitiy.Size = new System.Drawing.Size(331, 48);
+            this.txtQuantitiy.Size = new System.Drawing.Size(248, 39);
             this.txtQuantitiy.TabIndex = 7;
             // 
             // label13
@@ -283,9 +292,10 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Roboto", 12F);
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(139, 507);
+            this.label13.Location = new System.Drawing.Point(104, 412);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(15, 24);
+            this.label13.Size = new System.Drawing.Size(13, 20);
             this.label13.TabIndex = 20;
             this.label13.Text = ":";
             // 
@@ -294,9 +304,10 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Roboto", 12F);
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(27, 507);
+            this.label12.Location = new System.Drawing.Point(20, 412);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 24);
+            this.label12.Size = new System.Drawing.Size(73, 20);
             this.label12.TabIndex = 19;
             this.label12.Text = "Quantitiy";
             // 
@@ -314,13 +325,13 @@
             this.txtDescription.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.txtDescription.ForeColor = System.Drawing.Color.Black;
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescription.Location = new System.Drawing.Point(157, 366);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDescription.Location = new System.Drawing.Point(118, 297);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
             this.txtDescription.PlaceholderText = "";
             this.txtDescription.SelectedText = "";
-            this.txtDescription.Size = new System.Drawing.Size(861, 94);
+            this.txtDescription.Size = new System.Drawing.Size(646, 76);
             this.txtDescription.TabIndex = 6;
             // 
             // label11
@@ -328,9 +339,10 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Roboto", 12F);
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(135, 365);
+            this.label11.Location = new System.Drawing.Point(101, 297);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(15, 24);
+            this.label11.Size = new System.Drawing.Size(13, 20);
             this.label11.TabIndex = 17;
             this.label11.Text = ":";
             // 
@@ -339,9 +351,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 12F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(26, 366);
+            this.label2.Location = new System.Drawing.Point(20, 297);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 24);
+            this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "Description";
             // 
@@ -355,9 +368,10 @@
             this.btnSave.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(715, 591);
+            this.btnSave.Location = new System.Drawing.Point(536, 480);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(303, 45);
+            this.btnSave.Size = new System.Drawing.Size(227, 37);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save Changes";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -376,13 +390,13 @@
             this.txtCarModel.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.txtCarModel.ForeColor = System.Drawing.Color.Black;
             this.txtCarModel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCarModel.Location = new System.Drawing.Point(480, 180);
-            this.txtCarModel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCarModel.Location = new System.Drawing.Point(360, 146);
+            this.txtCarModel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtCarModel.Name = "txtCarModel";
             this.txtCarModel.PasswordChar = '\0';
             this.txtCarModel.PlaceholderText = "";
             this.txtCarModel.SelectedText = "";
-            this.txtCarModel.Size = new System.Drawing.Size(538, 48);
+            this.txtCarModel.Size = new System.Drawing.Size(404, 39);
             this.txtCarModel.TabIndex = 3;
             // 
             // txtCarID
@@ -400,14 +414,14 @@
             this.txtCarID.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.txtCarID.ForeColor = System.Drawing.Color.Black;
             this.txtCarID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCarID.Location = new System.Drawing.Point(480, 58);
-            this.txtCarID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCarID.Location = new System.Drawing.Point(360, 47);
+            this.txtCarID.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtCarID.Name = "txtCarID";
             this.txtCarID.PasswordChar = '\0';
             this.txtCarID.PlaceholderText = "";
             this.txtCarID.ReadOnly = true;
             this.txtCarID.SelectedText = "";
-            this.txtCarID.Size = new System.Drawing.Size(538, 48);
+            this.txtCarID.Size = new System.Drawing.Size(404, 39);
             this.txtCarID.TabIndex = 1;
             // 
             // label10
@@ -415,9 +429,10 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Roboto", 12F);
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(447, 253);
+            this.label10.Location = new System.Drawing.Point(335, 206);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(15, 24);
+            this.label10.Size = new System.Drawing.Size(13, 20);
             this.label10.TabIndex = 9;
             this.label10.Text = ":";
             // 
@@ -426,9 +441,10 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Roboto", 12F);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(448, 192);
+            this.label9.Location = new System.Drawing.Point(336, 156);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(15, 24);
+            this.label9.Size = new System.Drawing.Size(13, 20);
             this.label9.TabIndex = 8;
             this.label9.Text = ":";
             // 
@@ -437,9 +453,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Roboto", 12F);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(448, 132);
+            this.label8.Location = new System.Drawing.Point(336, 107);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(15, 24);
+            this.label8.Size = new System.Drawing.Size(13, 20);
             this.label8.TabIndex = 7;
             this.label8.Text = ":";
             // 
@@ -448,9 +465,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto", 12F);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(448, 73);
+            this.label7.Location = new System.Drawing.Point(336, 59);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 24);
+            this.label7.Size = new System.Drawing.Size(13, 20);
             this.label7.TabIndex = 6;
             this.label7.Text = ":";
             // 
@@ -459,9 +477,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 12F);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(268, 253);
+            this.label6.Location = new System.Drawing.Point(201, 206);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 24);
+            this.label6.Size = new System.Drawing.Size(77, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "Condition";
             // 
@@ -470,9 +489,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto", 12F);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(268, 192);
+            this.label5.Location = new System.Drawing.Point(201, 156);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 24);
+            this.label5.Size = new System.Drawing.Size(81, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Car Model";
             // 
@@ -481,9 +501,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 12F);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(268, 132);
+            this.label4.Location = new System.Drawing.Point(201, 107);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 24);
+            this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Car Name";
             // 
@@ -492,9 +513,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 12F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(268, 73);
+            this.label3.Location = new System.Drawing.Point(201, 59);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 24);
+            this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Car ID";
             // 
@@ -502,12 +524,15 @@
             // 
             this.CarPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CarPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CarPicture.Location = new System.Drawing.Point(31, 57);
+            this.CarPicture.Location = new System.Drawing.Point(23, 46);
+            this.CarPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CarPicture.Name = "CarPicture";
-            this.CarPicture.Size = new System.Drawing.Size(205, 215);
+            this.CarPicture.Size = new System.Drawing.Size(154, 175);
             this.CarPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.CarPicture.TabIndex = 0;
             this.CarPicture.TabStop = false;
+            this.CarPicture.DragDrop += new System.Windows.Forms.DragEventHandler(this.CarPicture_DragDrop);
+            this.CarPicture.DragEnter += new System.Windows.Forms.DragEventHandler(this.CarPicture_DragEnter);
             // 
             // btnExit
             // 
@@ -518,9 +543,10 @@
             this.btnExit.FillColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Roboto", 10F);
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(1009, 12);
+            this.btnExit.Location = new System.Drawing.Point(757, 10);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(46, 45);
+            this.btnExit.Size = new System.Drawing.Size(34, 37);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "X";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -532,14 +558,16 @@
             // 
             // CarEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1067, 736);
+            this.ClientSize = new System.Drawing.Size(800, 598);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.btnExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(800, 598);
             this.Name = "CarEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CarEdit";

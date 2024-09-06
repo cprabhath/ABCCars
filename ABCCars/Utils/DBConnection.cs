@@ -20,7 +20,7 @@ namespace ABCCars
             try
             {
                 qe.ExecuteReader(
-                "SELECT * FROM customers WHERE cusEmail = @username AND hashedpassword = @password",
+                "SELECT * FROM customers WHERE cusEmail = @username AND hashedpassword = @password AND status = 1",
                 new SqlParameter("@username", username),
                 new SqlParameter("@password", password));
 
@@ -72,7 +72,7 @@ namespace ABCCars
                 var hashPassword = BCrypt.Net.BCrypt.HashPassword(password);
 
                 return qe.ExecuteNonQuery(
-                    "INSERT INTO customers (cusName, cusAddress, cusMobile, cusEmail, hashedpassword, isEmailVerified) VALUES (@fullName, @address, @mobile, @email, @password, @isEmailVerified)",
+                    "INSERT INTO customers (cusName, cusAddress, cusMobile, cusEmail, hashedpassword, isEmailVerified, status) VALUES (@fullName, @address, @mobile, @email, @password, @isEmailVerified, 1)",
                     new SqlParameter("@fullName", fullName),
                     new SqlParameter("@address", address),
                     new SqlParameter("@mobile", mobile),
@@ -337,6 +337,47 @@ namespace ABCCars
                 return false;
             }
         }
+
+
+        // =========================== ChangeAdminUsername ================================
+        public bool ChangeAdminUsername(string oldUsername, string newUsername)
+        {
+            try
+            {
+                return qe.ExecuteNonQuery(
+                "UPDATE admin SET username = @newUsername, updatedAt = @update WHERE username = @oldUsername",
+                new SqlParameter("@newUsername", newUsername),
+                new SqlParameter("@update", DateTime.Now),
+                new SqlParameter("@oldUsername", oldUsername));
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+        // ===================================================================================
+
+        // ========================================= ChangeAdminEmail ==========================
+        public bool ChangeAdminEmail(string existingEmail, string newEmail)
+        {
+            try
+            {
+                return qe.ExecuteNonQuery(
+                "UPDATE admin SET email = @newEmail, updatedAt = @update WHERE email = @existingEmail",
+                new SqlParameter("@newEmail", newEmail),
+                new SqlParameter("@update", DateTime.Now),
+                new SqlParameter("@existingEmail", existingEmail));
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
     }
+
     // ===================================================================================
 }

@@ -49,10 +49,10 @@
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 81);
+            this.panel2.Location = new System.Drawing.Point(0, 74);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1085, 702);
+            this.panel2.Size = new System.Drawing.Size(1017, 650);
             this.panel2.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -60,10 +60,10 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 53);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 42);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1085, 649);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1017, 608);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // panel3
@@ -74,16 +74,17 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1085, 53);
+            this.panel3.Size = new System.Drawing.Size(1017, 42);
             this.panel3.TabIndex = 0;
             // 
             // txtOrders
             // 
             this.txtOrders.AutoSize = true;
             this.txtOrders.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrders.Location = new System.Drawing.Point(472, 12);
+            this.txtOrders.Location = new System.Drawing.Point(484, 9);
+            this.txtOrders.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtOrders.Name = "txtOrders";
-            this.txtOrders.Size = new System.Drawing.Size(126, 30);
+            this.txtOrders.Size = new System.Drawing.Size(98, 24);
             this.txtOrders.TabIndex = 0;
             this.txtOrders.Text = "All Orders";
             // 
@@ -91,9 +92,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = global::ABCCars.Properties.Resources.bx_search;
-            this.pictureBox1.Location = new System.Drawing.Point(1036, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(971, 24);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -109,13 +111,13 @@
             this.searchBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchBox.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.searchBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchBox.Location = new System.Drawing.Point(478, 19);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchBox.Location = new System.Drawing.Point(524, 17);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.searchBox.Name = "searchBox";
             this.searchBox.PasswordChar = '\0';
             this.searchBox.PlaceholderText = "Search here...";
             this.searchBox.SelectedText = "";
-            this.searchBox.Size = new System.Drawing.Size(595, 46);
+            this.searchBox.Size = new System.Drawing.Size(476, 37);
             this.searchBox.TabIndex = 0;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
@@ -130,7 +132,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1085, 81);
+            this.panel1.Size = new System.Drawing.Size(1017, 74);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -146,17 +148,18 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.34483F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.65517F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1085, 783);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1017, 724);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // OrderManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1085, 783);
+            this.ClientSize = new System.Drawing.Size(1017, 724);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "OrderManage";
             this.Text = "OrderManage";
             this.Load += new System.EventHandler(this.OrderManage_Load);

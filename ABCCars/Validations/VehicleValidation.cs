@@ -11,10 +11,10 @@ namespace ABCCars.Validations
         public string Description { get; set; }
         public string Condition { get; set; }
         public string Price { get; set; }
-        public Image Image { get; set; }
+        public string Image { get; set; }
         public string qty { get; set; }
 
-        public VehicleValidation(string carID, string Name, string Model, string Description, string Condition, string Price, Image Image, string qty)
+        public VehicleValidation(string carID, string Name, string Model, string Description, string Condition, string Price, string Image, string qty)
         {
             this.carID = carID;
             this.Name = Name;
@@ -37,8 +37,10 @@ namespace ABCCars.Validations
             RuleFor(x => x.Description).NotEmpty().WithMessage("Description is required.");
             RuleFor(x => x.Condition).NotEmpty().WithMessage("Condition is required.");
             RuleFor(x => x.Price).NotEmpty().WithMessage("Price is required.");
+            RuleFor(x => x.Price).Must(x => int.TryParse(x, out int _)).WithMessage("Price must be a number.");
             RuleFor(x => x.Image).NotEmpty().WithMessage("Image is required.");
             RuleFor(x => x.qty).NotEmpty().WithMessage("Quantity is required.");
+            RuleFor(x => x.qty).Must(x => int.TryParse(x, out int _)).WithMessage("Quantity must be a number.");
         }
     }
 }
